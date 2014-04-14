@@ -1,0 +1,786 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+    <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
+        
+        <meta charset="UTF-8">
+        <title>Rasm2 | Radare2book</title>
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="robots" content="index, follow">
+        <meta name="author" content="Maijin">
+        <meta name="description" content="Book generated using GitBook">
+        <meta name="keywords" content="gitbook,github" >
+        <meta name="generator" content="www.gitbook.io">
+
+        
+        <link rel="next" href="../rasm2/assemble.html" />
+        
+        
+        <link rel="prev" href="../rabin2/program_sections.html" />
+        
+
+        <meta property="og:title" content="Rasm2 | Radare2book">
+        <meta property="og:site_name" content="Radare2book">
+        <meta property="og:type" content="book">
+        <meta property="og:locale" content="en_US">
+
+        <meta property="book:author" content="https://github.com/Maijin">
+        <meta property="book:tag" content="GitBook">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+        
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+        
+    </head>
+    <body>
+        
+<div class="book" data-github="Maijin/radare2book" data-level="8" data-basepath=".." data-revision="1397495608797">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
+    <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+
+    <!-- Actions Right -->
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+
+    <a href="https://github.com/Maijin/radare2book/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/Maijin/radare2book/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+
+
+    <!-- Title -->
+    <h1><a href="../" >Radare2book</a></h1>
+</div>
+
+    <div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        <li>
+            <a href="https://github.com/Maijin" target="blank">About the author</a>
+        </li>
+        <li>
+            <a href="https://github.com/Maijin/radare2book/issues" target="blank">Questions and Issues</a>
+        </li>
+        <li>
+            <a href="https://github.com/Maijin/radare2book/edit/master/rasm2/intro.md" target="blank">Edit and Contribute</a>
+        </li>
+        <li class="divider"></li>
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+            <li  data-level="1" data-path="introduction/intro.html">
+                
+                <a href="../introduction/intro.html">
+                    <i class="fa fa-check"></i> <b>1)</b> Introduction
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="1.1" data-path="introduction/history.html">
+                            
+                            <a href="../introduction/history.html">
+                                <i class="fa fa-check"></i> <b>1.1)</b> History
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.2" data-path="introduction/overview.html">
+                            
+                            <a href="../introduction/overview.html">
+                                <i class="fa fa-check"></i> <b>1.2)</b> Overview
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.3" data-path="introduction/getting_radare.html">
+                            
+                            <a href="../introduction/getting_radare.html">
+                                <i class="fa fa-check"></i> <b>1.3)</b> Getting radare
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.4" data-path="introduction/compilation_portability.html">
+                            
+                            <a href="../introduction/compilation_portability.html">
+                                <i class="fa fa-check"></i> <b>1.4)</b> Compilation and portability
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.5" data-path="introduction/windows_compilation.html">
+                            
+                            <a href="../introduction/windows_compilation.html">
+                                <i class="fa fa-check"></i> <b>1.5)</b> Windows compilation
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.6" data-path="introduction/commandline_flags.html">
+                            
+                            <a href="../introduction/commandline_flags.html">
+                                <i class="fa fa-check"></i> <b>1.6)</b> Commandline flags
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.7" data-path="introduction/basic_usage.html">
+                            
+                            <a href="../introduction/basic_usage.html">
+                                <i class="fa fa-check"></i> <b>1.7)</b> Basic usage
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.8" data-path="introduction/command_format.html">
+                            
+                            <a href="../introduction/command_format.html">
+                                <i class="fa fa-check"></i> <b>1.8)</b> Command format
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.9" data-path="introduction/expressions.html">
+                            
+                            <a href="../introduction/expressions.html">
+                                <i class="fa fa-check"></i> <b>1.9)</b> Expressions
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.10" data-path="introduction/rax2.html">
+                            
+                            <a href="../introduction/rax2.html">
+                                <i class="fa fa-check"></i> <b>1.10)</b> Rax2
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="1.11" data-path="introduction/basic_debugger_session.html">
+                            
+                            <a href="../introduction/basic_debugger_session.html">
+                                <i class="fa fa-check"></i> <b>1.11)</b> Basic debugger session
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="2" data-path="configuration/intro.html">
+                
+                <a href="../configuration/intro.html">
+                    <i class="fa fa-check"></i> <b>2)</b> Configuration
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="2.1" data-path="configuration/colors.html">
+                            
+                            <a href="../configuration/colors.html">
+                                <i class="fa fa-check"></i> <b>2.1)</b> Colors
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="2.2" data-path="configuration/common_configuration_variables.html">
+                            
+                            <a href="../configuration/common_configuration_variables.html">
+                                <i class="fa fa-check"></i> <b>2.2)</b> Common configuration variables
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="3" data-path="basic_commands/intro.html">
+                
+                <a href="../basic_commands/intro.html">
+                    <i class="fa fa-check"></i> <b>3)</b> Basic Commands
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="3.1" data-path="basic_commands/seeking.html">
+                            
+                            <a href="../basic_commands/seeking.html">
+                                <i class="fa fa-check"></i> <b>3.1)</b> Seeking
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.2" data-path="basic_commands/block_size.html">
+                            
+                            <a href="../basic_commands/block_size.html">
+                                <i class="fa fa-check"></i> <b>3.2)</b> Block Size
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.3" data-path="basic_commands/sections.html">
+                            
+                            <a href="../basic_commands/sections.html">
+                                <i class="fa fa-check"></i> <b>3.3)</b> Sections
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.4" data-path="basic_commands/mapping_files.html">
+                            
+                            <a href="../basic_commands/mapping_files.html">
+                                <i class="fa fa-check"></i> <b>3.4)</b> Mapping Files
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.5" data-path="basic_commands/print_modes.html">
+                            
+                            <a href="../basic_commands/print_modes.html">
+                                <i class="fa fa-check"></i> <b>3.5)</b> Print Modes
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.6" data-path="basic_commands/flags.html">
+                            
+                            <a href="../basic_commands/flags.html">
+                                <i class="fa fa-check"></i> <b>3.6)</b> Flags
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.7" data-path="basic_commands/write.html">
+                            
+                            <a href="../basic_commands/write.html">
+                                <i class="fa fa-check"></i> <b>3.7)</b> Write
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.8" data-path="basic_commands/zoom.html">
+                            
+                            <a href="../basic_commands/zoom.html">
+                                <i class="fa fa-check"></i> <b>3.8)</b> Zoom
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.9" data-path="basic_commands/yank_paste.html">
+                            
+                            <a href="../basic_commands/yank_paste.html">
+                                <i class="fa fa-check"></i> <b>3.9)</b> Yank/Paste
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="3.10" data-path="basic_commands/comparing_bytes.html">
+                            
+                            <a href="../basic_commands/comparing_bytes.html">
+                                <i class="fa fa-check"></i> <b>3.10)</b> Comparing Bytes
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="4" data-path="visual_mode/intro.html">
+                
+                <a href="../visual_mode/intro.html">
+                    <i class="fa fa-check"></i> <b>4)</b> Visual mode
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="4.1" data-path="visual_mode/visual_cursor.html">
+                            
+                            <a href="../visual_mode/visual_cursor.html">
+                                <i class="fa fa-check"></i> <b>4.1)</b> Visual cursor
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.2" data-path="visual_mode/visual_insert.html">
+                            
+                            <a href="../visual_mode/visual_insert.html">
+                                <i class="fa fa-check"></i> <b>4.2)</b> Visual inserts
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="4.3" data-path="visual_mode/visual_xrefs.html">
+                            
+                            <a href="../visual_mode/visual_xrefs.html">
+                                <i class="fa fa-check"></i> <b>4.3)</b> Visual XREFS
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="5" data-path="search_bytes/intro.html">
+                
+                <a href="../search_bytes/intro.html">
+                    <i class="fa fa-check"></i> <b>5)</b> Searching bytes
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="5.1" data-path="search_bytes/basic_searches.html">
+                            
+                            <a href="../search_bytes/basic_searches.html">
+                                <i class="fa fa-check"></i> <b>5.1)</b> Basic Searches
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.2" data-path="search_bytes/configurating_the_search.html">
+                            
+                            <a href="../search_bytes/configurating_the_search.html">
+                                <i class="fa fa-check"></i> <b>5.2)</b> Configurating the search
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.3" data-path="search_bytes/pattern_search.html">
+                            
+                            <a href="../search_bytes/pattern_search.html">
+                                <i class="fa fa-check"></i> <b>5.3)</b> Pattern Search
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.4" data-path="search_bytes/automatization.html">
+                            
+                            <a href="../search_bytes/automatization.html">
+                                <i class="fa fa-check"></i> <b>5.4)</b> Automatization
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.5" data-path="search_bytes/backward_search.html">
+                            
+                            <a href="../search_bytes/backward_search.html">
+                                <i class="fa fa-check"></i> <b>5.5)</b> Backward Search
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.6" data-path="search_bytes/search_in_assembly.html">
+                            
+                            <a href="../search_bytes/search_in_assembly.html">
+                                <i class="fa fa-check"></i> <b>5.6)</b> Search in assembly
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="5.7" data-path="search_bytes/searching_aes_keys.html">
+                            
+                            <a href="../search_bytes/searching_aes_keys.html">
+                                <i class="fa fa-check"></i> <b>5.7)</b> Searching AES Keys
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="6" data-path="disassembling/intro.html">
+                
+                <a href="../disassembling/intro.html">
+                    <i class="fa fa-check"></i> <b>6)</b> Disassembling
+                </a>
+                
+                
+            </li>
+        
+            <li  data-level="7" data-path="rabin2/intro.html">
+                
+                <a href="../rabin2/intro.html">
+                    <i class="fa fa-check"></i> <b>7)</b> Rabin2
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="7.1" data-path="rabin2/file_identification.html">
+                            
+                            <a href="../rabin2/file_identification.html">
+                                <i class="fa fa-check"></i> <b>7.1)</b> File identification
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.2" data-path="rabin2/entrypoints.html">
+                            
+                            <a href="../rabin2/entrypoints.html">
+                                <i class="fa fa-check"></i> <b>7.2)</b> Entrypoint
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.3" data-path="rabin2/imports.html">
+                            
+                            <a href="../rabin2/imports.html">
+                                <i class="fa fa-check"></i> <b>7.3)</b> Imports
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.4" data-path="rabin2/symbols.html">
+                            
+                            <a href="../rabin2/symbols.html">
+                                <i class="fa fa-check"></i> <b>7.4)</b> Symbols (exports)
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.5" data-path="rabin2/libraries.html">
+                            
+                            <a href="../rabin2/libraries.html">
+                                <i class="fa fa-check"></i> <b>7.5)</b> Libraries
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.6" data-path="rabin2/strings.html">
+                            
+                            <a href="../rabin2/strings.html">
+                                <i class="fa fa-check"></i> <b>7.6)</b> Strings
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="7.7" data-path="rabin2/program_sections.html">
+                            
+                            <a href="../rabin2/program_sections.html">
+                                <i class="fa fa-check"></i> <b>7.7)</b> Program sections
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="8" data-path="rasm2/intro.html">
+                
+                <a href="../rasm2/intro.html">
+                    <i class="fa fa-check"></i> <b>8)</b> Rasm2
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="8.1" data-path="rasm2/assemble.html">
+                            
+                            <a href="../rasm2/assemble.html">
+                                <i class="fa fa-check"></i> <b>8.1)</b> Assemble
+                            </a>
+                            
+                        </li>
+                    
+                        <li  data-level="8.2" data-path="rasm2/disassemble.html">
+                            
+                            <a href="../rasm2/disassemble.html">
+                                <i class="fa fa-check"></i> <b>8.2)</b> Disassemble
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="9" data-path="analysis/intro.html">
+                
+                <a href="../analysis/intro.html">
+                    <i class="fa fa-check"></i> <b>9)</b> Analysis
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="9.1" data-path="analysis/code_analysis.html">
+                            
+                            <a href="../analysis/code_analysis.html">
+                                <i class="fa fa-check"></i> <b>9.1)</b> Code analysis
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="10" data-path="rahash2/intro.html">
+                
+                <a href="../rahash2/intro.html">
+                    <i class="fa fa-check"></i> <b>10)</b> Rahash2
+                </a>
+                
+                
+                <ul class="articles">
+                    
+                        <li  data-level="10.1" data-path="rahash2/rahash_tool.html">
+                            
+                            <a href="../rahash2/rahash_tool.html">
+                                <i class="fa fa-check"></i> <b>10.1)</b> Rahash tool
+                            </a>
+                            
+                        </li>
+                    
+                </ul>
+                
+            </li>
+        
+            <li  data-level="11" data-path="debugger/intro.html">
+                
+                <a href="../debugger/intro.html">
+                    <i class="fa fa-check"></i> <b>11)</b> Debugger
+                </a>
+                
+                
+            </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body" tabindex="-1">
+        <div class="body-inner">
+            <div class="page-wrapper">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 92.72727272727273%;min-width: 90.9090909090909%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../introduction/intro.html" title="Introduction" class="chapter done new-chapter" data-progress="1" style="left: 1.8181818181818181%;"></a>
+    
+        <a href="../introduction/history.html" title="History" class="chapter done " data-progress="1.1" style="left: 3.6363636363636362%;"></a>
+    
+        <a href="../introduction/rax2.html" title="Rax2" class="chapter done " data-progress="1.10" style="left: 5.454545454545454%;"></a>
+    
+        <a href="../introduction/basic_debugger_session.html" title="Basic debugger session" class="chapter done " data-progress="1.11" style="left: 7.2727272727272725%;"></a>
+    
+        <a href="../introduction/overview.html" title="Overview" class="chapter done " data-progress="1.2" style="left: 9.090909090909092%;"></a>
+    
+        <a href="../introduction/getting_radare.html" title="Getting radare" class="chapter done " data-progress="1.3" style="left: 10.909090909090908%;"></a>
+    
+        <a href="../introduction/compilation_portability.html" title="Compilation and portability" class="chapter done " data-progress="1.4" style="left: 12.727272727272727%;"></a>
+    
+        <a href="../introduction/windows_compilation.html" title="Windows compilation" class="chapter done " data-progress="1.5" style="left: 14.545454545454545%;"></a>
+    
+        <a href="../introduction/commandline_flags.html" title="Commandline flags" class="chapter done " data-progress="1.6" style="left: 16.363636363636363%;"></a>
+    
+        <a href="../introduction/basic_usage.html" title="Basic usage" class="chapter done " data-progress="1.7" style="left: 18.181818181818183%;"></a>
+    
+        <a href="../introduction/command_format.html" title="Command format" class="chapter done " data-progress="1.8" style="left: 20%;"></a>
+    
+        <a href="../introduction/expressions.html" title="Expressions" class="chapter done " data-progress="1.9" style="left: 21.818181818181817%;"></a>
+    
+        <a href="../rahash2/intro.html" title="Rahash2" class="chapter done " data-progress="10" style="left: 23.636363636363637%;"></a>
+    
+        <a href="../rahash2/rahash_tool.html" title="Rahash tool" class="chapter done " data-progress="10.1" style="left: 25.454545454545453%;"></a>
+    
+        <a href="../debugger/intro.html" title="Debugger" class="chapter done " data-progress="11" style="left: 27.272727272727273%;"></a>
+    
+        <a href="../configuration/intro.html" title="Configuration" class="chapter done new-chapter" data-progress="2" style="left: 29.09090909090909%;"></a>
+    
+        <a href="../configuration/colors.html" title="Colors" class="chapter done " data-progress="2.1" style="left: 30.90909090909091%;"></a>
+    
+        <a href="../configuration/common_configuration_variables.html" title="Common configuration variables" class="chapter done " data-progress="2.2" style="left: 32.72727272727273%;"></a>
+    
+        <a href="../basic_commands/intro.html" title="Basic Commands" class="chapter done new-chapter" data-progress="3" style="left: 34.54545454545455%;"></a>
+    
+        <a href="../basic_commands/seeking.html" title="Seeking" class="chapter done " data-progress="3.1" style="left: 36.36363636363637%;"></a>
+    
+        <a href="../basic_commands/comparing_bytes.html" title="Comparing Bytes" class="chapter done " data-progress="3.10" style="left: 38.18181818181818%;"></a>
+    
+        <a href="../basic_commands/block_size.html" title="Block Size" class="chapter done " data-progress="3.2" style="left: 40%;"></a>
+    
+        <a href="../basic_commands/sections.html" title="Sections" class="chapter done " data-progress="3.3" style="left: 41.81818181818182%;"></a>
+    
+        <a href="../basic_commands/mapping_files.html" title="Mapping Files" class="chapter done " data-progress="3.4" style="left: 43.63636363636363%;"></a>
+    
+        <a href="../basic_commands/print_modes.html" title="Print Modes" class="chapter done " data-progress="3.5" style="left: 45.45454545454545%;"></a>
+    
+        <a href="../basic_commands/flags.html" title="Flags" class="chapter done " data-progress="3.6" style="left: 47.27272727272727%;"></a>
+    
+        <a href="../basic_commands/write.html" title="Write" class="chapter done " data-progress="3.7" style="left: 49.09090909090909%;"></a>
+    
+        <a href="../basic_commands/zoom.html" title="Zoom" class="chapter done " data-progress="3.8" style="left: 50.90909090909091%;"></a>
+    
+        <a href="../basic_commands/yank_paste.html" title="Yank/Paste" class="chapter done " data-progress="3.9" style="left: 52.72727272727273%;"></a>
+    
+        <a href="../visual_mode/intro.html" title="Visual mode" class="chapter done new-chapter" data-progress="4" style="left: 54.54545454545455%;"></a>
+    
+        <a href="../visual_mode/visual_cursor.html" title="Visual cursor" class="chapter done " data-progress="4.1" style="left: 56.36363636363637%;"></a>
+    
+        <a href="../visual_mode/visual_insert.html" title="Visual inserts" class="chapter done " data-progress="4.2" style="left: 58.18181818181818%;"></a>
+    
+        <a href="../visual_mode/visual_xrefs.html" title="Visual XREFS" class="chapter done " data-progress="4.3" style="left: 60%;"></a>
+    
+        <a href="../search_bytes/intro.html" title="Searching bytes" class="chapter done new-chapter" data-progress="5" style="left: 61.81818181818182%;"></a>
+    
+        <a href="../search_bytes/basic_searches.html" title="Basic Searches" class="chapter done " data-progress="5.1" style="left: 63.63636363636363%;"></a>
+    
+        <a href="../search_bytes/configurating_the_search.html" title="Configurating the search" class="chapter done " data-progress="5.2" style="left: 65.45454545454545%;"></a>
+    
+        <a href="../search_bytes/pattern_search.html" title="Pattern Search" class="chapter done " data-progress="5.3" style="left: 67.27272727272727%;"></a>
+    
+        <a href="../search_bytes/automatization.html" title="Automatization" class="chapter done " data-progress="5.4" style="left: 69.0909090909091%;"></a>
+    
+        <a href="../search_bytes/backward_search.html" title="Backward Search" class="chapter done " data-progress="5.5" style="left: 70.9090909090909%;"></a>
+    
+        <a href="../search_bytes/search_in_assembly.html" title="Search in assembly" class="chapter done " data-progress="5.6" style="left: 72.72727272727273%;"></a>
+    
+        <a href="../search_bytes/searching_aes_keys.html" title="Searching AES Keys" class="chapter done " data-progress="5.7" style="left: 74.54545454545455%;"></a>
+    
+        <a href="../disassembling/intro.html" title="Disassembling" class="chapter done new-chapter" data-progress="6" style="left: 76.36363636363636%;"></a>
+    
+        <a href="../rabin2/intro.html" title="Rabin2" class="chapter done new-chapter" data-progress="7" style="left: 78.18181818181819%;"></a>
+    
+        <a href="../rabin2/file_identification.html" title="File identification" class="chapter done " data-progress="7.1" style="left: 80%;"></a>
+    
+        <a href="../rabin2/entrypoints.html" title="Entrypoint" class="chapter done " data-progress="7.2" style="left: 81.81818181818181%;"></a>
+    
+        <a href="../rabin2/imports.html" title="Imports" class="chapter done " data-progress="7.3" style="left: 83.63636363636364%;"></a>
+    
+        <a href="../rabin2/symbols.html" title="Symbols (exports)" class="chapter done " data-progress="7.4" style="left: 85.45454545454545%;"></a>
+    
+        <a href="../rabin2/libraries.html" title="Libraries" class="chapter done " data-progress="7.5" style="left: 87.27272727272727%;"></a>
+    
+        <a href="../rabin2/strings.html" title="Strings" class="chapter done " data-progress="7.6" style="left: 89.0909090909091%;"></a>
+    
+        <a href="../rabin2/program_sections.html" title="Program sections" class="chapter done " data-progress="7.7" style="left: 90.9090909090909%;"></a>
+    
+        <a href="../rasm2/intro.html" title="Rasm2" class="chapter done new-chapter" data-progress="8" style="left: 92.72727272727273%;"></a>
+    
+        <a href="../rasm2/assemble.html" title="Assemble" class="chapter  " data-progress="8.1" style="left: 94.54545454545455%;"></a>
+    
+        <a href="../rasm2/disassemble.html" title="Disassemble" class="chapter  " data-progress="8.2" style="left: 96.36363636363636%;"></a>
+    
+        <a href="../analysis/intro.html" title="Analysis" class="chapter  new-chapter" data-progress="9" style="left: 98.18181818181819%;"></a>
+    
+        <a href="../analysis/code_analysis.html" title="Code analysis" class="chapter  " data-progress="9.1" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_44">
+                    
+                        <h1 id="chapter-14-rasm2">Chapter 14: Rasm2</h1>
+<p>The inline assembler/disassembler. Initially &#39;rasm&#39; was designed to be used for binary patching, just to get the bytes of a certain opcode. Here&#39;s the help</p>
+<pre><code>$ rasm2 -h
+Usage: rasm2 [-CdDehLBvw] [-a arch] [-b bits] [-o addr] [-s syntax]
+             [-f file] [-F fil:ter] [-i skip] [-l len] 'code'|hex|-
+ -<span class="ruby">a [arch]    <span class="hljs-constant">Set</span> architecture to assemble/disassemble (see -<span class="hljs-constant">L</span>)
+</span> -<span class="ruby">b [bits]    <span class="hljs-constant">Set</span> cpu register size (<span class="hljs-number">8</span>, <span class="hljs-number">16</span>, <span class="hljs-number">32</span>, <span class="hljs-number">64</span>) (<span class="hljs-constant">RASM2_BITS</span>)
+</span> -<span class="ruby">c [cpu]     <span class="hljs-constant">Select</span> specific <span class="hljs-constant">CPU</span> (depends on arch)
+</span> -<span class="ruby"><span class="hljs-constant">C</span>           <span class="hljs-constant">Output</span> <span class="hljs-keyword">in</span> <span class="hljs-constant">C</span> format
+</span> -<span class="ruby">d, -<span class="hljs-constant">D</span>       <span class="hljs-constant">Disassemble</span> from hexpair bytes (-<span class="hljs-constant">D</span> show hexpairs)
+</span> -<span class="ruby">e           <span class="hljs-constant">Use</span> big endian instead of little endian
+</span> -<span class="ruby">f [file]    <span class="hljs-constant">Read</span> data from file
+</span> -<span class="ruby"><span class="hljs-constant">F</span> [<span class="hljs-symbol">in:</span>out]  <span class="hljs-constant">Specify</span> input <span class="hljs-keyword">and</span>/<span class="hljs-keyword">or</span> output filters (att2intel, x86.pseudo, ...)
+</span> -<span class="ruby">h           <span class="hljs-constant">Show</span> this help
+</span> -<span class="ruby">i [len]     ignore/skip <span class="hljs-constant">N</span> bytes of the input buffer
+</span> -<span class="ruby">k [kernel]  <span class="hljs-constant">Select</span> operating system (linux, windows, darwin, ..)
+</span> -<span class="ruby">l [len]     <span class="hljs-constant">Input</span>/<span class="hljs-constant">Output</span> length
+</span> -<span class="ruby"><span class="hljs-constant">L</span>           <span class="hljs-constant">List</span> supported asm plugins
+</span> -<span class="ruby">o [offset]  <span class="hljs-constant">Set</span> start address <span class="hljs-keyword">for</span> code (default <span class="hljs-number">0</span>)
+</span> -<span class="ruby"><span class="hljs-constant">O</span> [file]    <span class="hljs-constant">Output</span> file name (rasm2 -<span class="hljs-constant">Bf</span> a.asm -<span class="hljs-constant">O</span> a)
+</span> -<span class="ruby">s [syntax]  <span class="hljs-constant">Select</span> syntax (intel, att)
+</span> -<span class="ruby"><span class="hljs-constant">B</span>           <span class="hljs-constant">Binary</span> input/output (-l is mandatory <span class="hljs-keyword">for</span> binary input)
+</span> -<span class="ruby">v           <span class="hljs-constant">Show</span> version information
+</span> -<span class="ruby">w           <span class="hljs-constant">What</span><span class="hljs-string">'s this instruction for? describe opcode
+</span></span> If '-l' value is greater than output length, output is padded with nops
+ If the last argument is '-' reads from stdin
+</code></pre><p>Asm supported plugins can be listed with &quot;-L&quot;</p>
+<pre><code>$ rasm2 <span class="hljs-attribute">-L</span>
+_d  <span class="hljs-number">16</span>         <span class="hljs-number">8051</span>        PD      <span class="hljs-number">8051</span> Intel CPU
+_d  <span class="hljs-number">16</span> <span class="hljs-number">32</span>      arc         GPL3    Argonaut RISC Core
+ad  <span class="hljs-number">16</span> <span class="hljs-number">32</span> <span class="hljs-number">64</span>   arm         GPL3    Acorn RISC Machine CPU
+_d  <span class="hljs-number">16</span> <span class="hljs-number">32</span> <span class="hljs-number">64</span>   arm<span class="hljs-built_in">.</span>cs      BSD     Capstone ARM disassembler
+_d  <span class="hljs-number">16</span> <span class="hljs-number">32</span>      arm<span class="hljs-built_in">.</span>winedbg LGPL2   WineDBG<span class="hljs-string">'s ARM disassembler
+_d  16 32      avr         GPL     AVR Atmel
+ad  32         bf          LGPL3   Brainfuck
+_d  16         cr16        LGPL3   cr16 disassembly plugin
+_d  16         csr         PD      Cambridge Silicon Radio (CSR)
+ad  32 64      dalvik      LGPL3   AndroidVM Dalvik
+ad  16         dcpu16      PD      Mojang'</span>s DCPU<span class="hljs-subst">-</span><span class="hljs-number">16</span>
+_d  <span class="hljs-number">32</span> <span class="hljs-number">64</span>      ebc         LGPL3   EFI Bytecode
+_d  <span class="hljs-number">8</span>          gb          LGPL3   GameBoy(TM) (z80<span class="hljs-attribute">-like</span>)
+_d  <span class="hljs-number">16</span>         h8300       LGPL3   H8/<span class="hljs-number">300</span> disassembly plugin
+_d  <span class="hljs-number">8</span>          i8080       BSD     Intel <span class="hljs-number">8080</span> CPU
+ad  <span class="hljs-number">32</span>         java        Apache  Java bytecode
+_d  <span class="hljs-number">32</span>         m68k        BSD     Motorola <span class="hljs-number">68000</span>
+_d  <span class="hljs-number">32</span>         malbolge    LGPL3   Malbolge Ternary VM
+ad  <span class="hljs-number">32</span> <span class="hljs-number">64</span>      mips        GPL3    MIPS CPU
+_d  <span class="hljs-number">16</span> <span class="hljs-number">32</span> <span class="hljs-number">64</span>   mips<span class="hljs-built_in">.</span>cs     BSD     Capstone MIPS disassembler
+_d  <span class="hljs-number">16</span> <span class="hljs-number">32</span> <span class="hljs-number">64</span>   msil        PD      <span class="hljs-built_in">.</span>NET Microsoft Intermediate Language
+_d  <span class="hljs-number">32</span>         nios2       GPL3    NIOS II Embedded Processor
+_d  <span class="hljs-number">32</span> <span class="hljs-number">64</span>      ppc         GPL3    PowerPC
+_d  <span class="hljs-number">32</span> <span class="hljs-number">64</span>      ppc<span class="hljs-built_in">.</span>cs      BSD     Capstone PowerPC disassembler
+ad             rar         LGPL3   RAR VM
+_d  <span class="hljs-number">32</span>         sh          GPL3    SuperH<span class="hljs-subst">-</span><span class="hljs-number">4</span> CPU
+_d  <span class="hljs-number">32</span> <span class="hljs-number">64</span>      sparc       GPL3    Scalable Processor Architecture
+_d  <span class="hljs-number">32</span>         tms320      LGPLv3  TMS320 DSP family
+_d  <span class="hljs-number">32</span>         ws          LGPL3   Whitespace esotheric VM
+_d  <span class="hljs-number">16</span> <span class="hljs-number">32</span> <span class="hljs-number">64</span>   x86         BSD     udis86 x86<span class="hljs-subst">-</span><span class="hljs-number">16</span>,<span class="hljs-number">32</span>,<span class="hljs-number">64</span>
+_d  <span class="hljs-number">16</span> <span class="hljs-number">32</span> <span class="hljs-number">64</span>   x86<span class="hljs-built_in">.</span>cs      BSD     Capstone X86 disassembler
+a_  <span class="hljs-number">32</span> <span class="hljs-number">64</span>      x86<span class="hljs-built_in">.</span>nz      LGPL3   x86 handmade assembler
+ad  <span class="hljs-number">32</span>         x86<span class="hljs-built_in">.</span>olly    GPL2    OllyDBG X86 disassembler
+ad  <span class="hljs-number">8</span>          z80         NC<span class="hljs-attribute">-GPL2</span> Zilog Z80
+</code></pre>
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../rabin2/program_sections.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../rasm2/assemble.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
+        <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+        <script src="../gitbook/app.js"></script>
+        
+    </body>
+</html>
