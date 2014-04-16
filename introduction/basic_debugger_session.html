@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="1.11" data-basepath=".." data-revision="1397495608797">
+<div class="book" data-github="Maijin/radare2book" data-level="1.11" data-basepath=".." data-revision="1397677384675">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -697,7 +697,7 @@
                 
                     <section class="normal" id="section-gitbook_21">
                     
-                        <h2 id="1-11-basic-debugger-session">1.11 Basic debugger session</h2>
+                        <h2 id="basic-debugger-session">Basic debugger session</h2>
 <p>To start debugging a program use the <code>-d</code> flag and append the PID or the program path with arguments.</p>
 <pre><code>$ r2 <span class="hljs-operator">-d</span> /bin/ls
 </code></pre><p>The debugger will fork and load the <code>ls</code> program in memory stopping the execution in the <code>ld.so</code>, so don&#39;t expect to see the entrypoint or the mapped libraries at this point. To change this you can define a new &#39;break entry point&#39; adding <code>e dbg.bep=entry</code> or <code>dbg.bep=main</code> to your .radarerc.</p>
