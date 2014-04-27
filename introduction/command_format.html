@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="1.8" data-basepath=".." data-revision="1397677545377">
+<div class="book" data-github="Maijin/radare2book" data-level="1.8" data-basepath=".." data-revision="1398629676614">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -712,12 +712,12 @@
                     <section class="normal" id="section-gitbook_23">
                     
                         <h2 id="command-format">Command format</h2>
-<p>The format of the commands looks something like that:</p>
+<p>The general format for commands looks something like this:</p>
 <pre><code>[<span class="hljs-link_label">.</span>][<span class="hljs-link_reference">times</span>][<span class="hljs-link_label">cmd</span>][<span class="hljs-link_reference">~grep</span>][<span class="hljs-link_label">@[@iter</span>]addr!size][|&gt;pipe] ; ...
-</code></pre><p>Commands are named with single chars [a-zA-Z]. So, if we prefix the command with a number. The following command will be executed as many times as we specify.</p>
+</code></pre><p>Commands are identified by a single character [a-zA-Z]. To repeatedly execute a command, simply prefix the command with a number.</p>
 <pre><code>px    <span class="hljs-array"># run px</span>
 <span class="hljs-number">3</span>px   <span class="hljs-array"># run </span><span class="hljs-number">3</span> times <span class="hljs-string">'px'</span>
-</code></pre><p>The <code>!</code> prefix is used to scape to the shell. If a single exclamation is used then commands will be send to the system() hook defined in the loaded IO plugin. This is used, for example in the ptrace IO plugin which accepts debugger commands from this interface.</p>
+</code></pre><p>The <code>!</code> prefix is used to execute a command in shell context. If a single exclamation is used, commands will be send to the system() hook defined in the currently loaded IO plugin. This is used, for example in the ptrace IO plugin which accepts debugger commands from this interface.</p>
 <p>Some examples:</p>
 <pre><code>ds                    ; call debugger <span class="hljs-string">'step'</span> <span class="hljs-command"><span class="hljs-keyword">command</span></span>
 px <span class="hljs-number">200</span> @ esp          ; show <span class="hljs-number">200</span> hex <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">at</span> esp
@@ -725,15 +725,17 @@ pc &gt; <span class="hljs-built_in">file</span>.c           ; dump buffer <span 
 wx <span class="hljs-number">90</span> @@ sym.*        ; <span class="hljs-built_in">write</span> <span class="hljs-operator">a</span> nop <span class="hljs-command"><span class="hljs-keyword">on</span> <span class="hljs-title">every</span> <span class="hljs-title">symbol</span></span>
 pd <span class="hljs-number">2000</span> | grep eax    ; grep opcodes <span class="hljs-keyword">using</span> <span class="hljs-string">'eax'</span> register
 px <span class="hljs-number">20</span> ; pd <span class="hljs-number">3</span> ; px <span class="hljs-number">40</span>  ; multiple commands <span class="hljs-operator">in</span> <span class="hljs-operator">a</span> single <span class="hljs-built_in">line</span>
-</code></pre><p>The <code>@</code> character is used to specify a temporary offset where the command at the left will be executed. </p>
-<p>The <code>~</code> character enables the internal grep which can be used to filter the output of any command. The usage is quite simple:</p>
+</code></pre><p>The <code>@</code> character is used to specify a temporary offset at which the command to its left will be executed. </p>
+<p>The <code>~</code> character enables the internal grep function which can be used to filter the output of any command. The usage is quite simple:</p>
 <pre><code>pd <span class="hljs-number">20</span>~<span class="hljs-keyword">call</span>            ; disassemble <span class="hljs-number">20</span> instructions <span class="hljs-keyword">and</span> grep <span class="hljs-keyword">for</span> <span class="hljs-comment">'call'</span>
 </code></pre><p>We can either grep for columns or rows:</p>
 <pre><code>pd <span class="hljs-number">20</span>~<span class="hljs-keyword">call</span>:<span class="hljs-number">0</span>          ; <span class="hljs-keyword">get</span> first row
 pd <span class="hljs-number">20</span>~<span class="hljs-keyword">call</span>:<span class="hljs-number">1</span>          ; <span class="hljs-keyword">get</span> <span class="hljs-built_in">second</span> row
+pd <span class="hljs-number">20</span>~<span class="hljs-keyword">call</span>[<span class="hljs-number">0</span>]         ; <span class="hljs-keyword">get</span> first column
+pd <span class="hljs-number">20</span>~<span class="hljs-keyword">call</span>[<span class="hljs-number">1</span>]         ; <span class="hljs-keyword">get</span> <span class="hljs-built_in">second</span> column
 </code></pre><p>Or even combine them:</p>
 <pre><code>pd <span class="hljs-number">20</span>~call[<span class="hljs-number">0</span>]:<span class="hljs-number">0</span>       ; grep <span class="hljs-keyword">first</span> column <span class="hljs-operator">of</span> <span class="hljs-operator">the</span> <span class="hljs-keyword">first</span> row matching <span class="hljs-string">'call'</span>
-</code></pre><p>The use of internal grep is a key feature for scripting radare, because is used to iterate over list of offsets or data processed from disassembly, ranges, or any other command. Here&#39;s an example of usage. See macros section (iterators) for more information.</p>
+</code></pre><p>The use of the internal grep function is a key feature for scripting radare, because it can be used to iterate over list of offsets or data processed from disassembly, ranges, or any other command. Here&#39;s an example of usage. See macros section (iterators) for more information.</p>
 
                     
                     </section>

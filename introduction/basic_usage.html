@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="1.7" data-basepath=".." data-revision="1397677545377">
+<div class="book" data-github="Maijin/radare2book" data-level="1.7" data-basepath=".." data-revision="1398629676614">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -712,21 +712,21 @@
                     <section class="normal" id="section-gitbook_27">
                     
                         <h2 id="basic-usage">Basic usage</h2>
-<p>Lot of people ping me some times for a sample usage session of radare to help to understand how the shell works and how to perform the most common tasks like disassembling, seeking, binary patching or debugging.</p>
-<p>I hardly encourage you to read the rest of this book to help you understand better how everything works and enhace your skills, the learning curve of radare is usually a bit harder at the beggining, but after an hour of using it you will easily understand how most of the things work and how to get them cooperate together :)</p>
-<p>For walking thru the binary file you will use three different kind of basic actions: seek, print and alterate.</p>
-<p>To &#39;seek&#39; there&#39;s an specific command abreviated as <code>s</code> than accepts an expression as argument that can be something like <code>10</code>, <code>+0x25</code> or <code>[0x100+ptr_table]</code>. If you are working with block-based files you may prefer to set up the block size to 4K or the size required with the command <code>b</code> and move forward or backward at seeks aligned to the block size using the <code>&gt;</code> and <code>&lt;</code> commands.</p>
-<p>The &#39;print&#39; command aliased as <code>p</code>, accepts a second letter to specify the print mode selected. The most common ones are <code>px</code> for printing in hexadecimal, <code>pd</code> for disassembling.</p>
-<p>To &#39;write&#39; open the file with <code>radare -w</code>. This should be specified while opening the file.
-You can use the <code>w</code> command to write strings or <code>wx</code> for hexpair strings:</p>
+<p>Many people requested a sample session of using radare to help in understanding how the shell works and how to perform the most common tasks like disassembling, seeking, binary patching and debugging.</p>
+<p>I strongly encourage you to read the rest of this book to help you understand better how everything works and to improve your skills. The learning curve for radare is usually a bit steep at the beggining. However, after an hour of using it you will easily understand how most of the things work and how to combine the various tools radare offers :)</p>
+<p>Navigating a binary file is done using three simple actions: seek, print and alterate.</p>
+<p>The &#39;seek&#39; command is abbreviated as <code>s</code> and accepts an expression as its argument. This expression can be something like <code>10</code>, <code>+0x25</code> or <code>[0x100+ptr_table]</code>. If you are working with block-based files you may prefer to set up the block size to 4K or the size required with the command <code>b</code> and move forward or backward at seeks aligned to the block size using the <code>&gt;</code> and <code>&lt;</code> commands.</p>
+<p>The &#39;print&#39; command (short: <code>p</code>), accepts a second letter to specify the print mode. The most common ones are <code>px</code> for printing in hexadecimal, <code>pd</code> for disassembling.</p>
+<p>To &#39;write&#39; first open the file with <code>radare -w</code>. This should be specified while opening the file.
+You can then use the <code>w</code> command to write strings or <code>wx</code> for hexpair strings:</p>
 <pre><code>&gt; w hello world         ; <span class="hljs-keyword">string</span>
 &gt; wx <span class="hljs-number">90</span> <span class="hljs-number">90</span> <span class="hljs-number">90</span> <span class="hljs-number">90</span>        ; hexpairs
 &gt; wa jmp <span class="hljs-number">0</span>x8048140      ; assemble
 &gt; wf <span class="hljs-keyword">inline</span>.bin         ; <span class="hljs-keyword">write</span> contents <span class="hljs-keyword">of</span> <span class="hljs-keyword">file</span>
-</code></pre><p>Appending a <code>?</code> to the command you will get the help message of it. (p? for example)</p>
-<p>Enter the visual mode pressing <code>V&lt;enter&gt;</code>, and return to the prompt using the <code>q</code> key.</p>
-<p>In the visual mode you should use hjkl keys which are the default ones for scrolling (like left,down,up,right). So entering in cursor mode (<code>c</code>) you will be able select bytes if using the shift together with HJKL.</p>
-<p>In the visual mode you can insert (alterate bytes) pressing <code>i</code> and then <tab> to switch between the hex or string column. Pressing <code>q</code> in hex panel to return into the visual mode.</p>
+</code></pre><p>Appending a <code>?</code> to the command will show its help message (example: p?).</p>
+<p>To enter visual mode press <code>V&lt;enter&gt;</code>. To quit visual mode and return to the prompt use the <code>q</code> key.</p>
+<p>In visual mode you can use the hjkl keys to navigate (left, down, up, right respectively). You can use these keys in cursor mode (<code>c</code>). To select keys in cursor mode, simply hold down the shift key while using any of the hjkl keys.</p>
+<p>While in visual mode you can also insert (alterate bytes) pressing <code>i</code> followed by <tab> to switch between the hex or string column. Pressing <code>q</code> inside the hex panel returns you to visual mode.</p>
 
                     
                     </section>

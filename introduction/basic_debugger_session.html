@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="1.11" data-basepath=".." data-revision="1397677545377">
+<div class="book" data-github="Maijin/radare2book" data-level="1.11" data-basepath=".." data-revision="1398629676614">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -728,15 +728,15 @@
 &gt; dm          ; show <span class="hljs-built_in">process</span> maps
 &gt; dmp A S rwx  ; change page <span class="hljs-keyword">at</span> A <span class="hljs-operator">with</span> size S protection permissions
 &gt; dr eax=<span class="hljs-number">33</span> ; <span class="hljs-built_in">set</span> register <span class="hljs-built_in">value</span>. eax = <span class="hljs-number">33</span>
-</code></pre><p>The easiest way to use the debugger is from the Visual mode, so, you will no need to remember much commands or keep states in your mind.</p>
+</code></pre><p>The easiest way to use the debugger is from the Visual mode. That way you will not need to remember many commands nor keep states in your mind.</p>
 <pre><code><span class="hljs-attr_selector">[0xB7F0C8C0]</span>&gt; <span class="hljs-tag">V</span>
-</code></pre><p>After entering this command an hexdump of the current eip will be showed. Now press <code>p</code> one time to get into the debugger view. You can press <code>p</code> and <code>P</code> to rotate thru the most commonly used print modes.</p>
+</code></pre><p>After entering this command a hexdump of the current eip will be shown. Now press <code>p</code> one time to get into the debugger view. You can press <code>p</code> and <code>P</code> to rotate through the most commonly used print modes.</p>
 <p>Use F7 or <code>s</code> to step into and F8 or <code>S</code> to step over.</p>
-<p>With the <code>c</code> key you will toggle the cursor mode and being able to select range of bytes to nop them or set breakpoints using the <code>F2</code> key.</p>
-<p>In the visual mode you can enter commands with <code>:</code> to dump buffer contents like</p>
+<p>With the <code>c</code> key you can toggle the cursor mode to enable the selection of a range of bytes to nop them or set breakpoints using the <code>F2</code> key.</p>
+<p>In visual mode you can enter commands with <code>:</code> to dump buffer contents like</p>
 <pre><code>x <span class="hljs-decorator">@ esi</span>
-</code></pre><p>To get the help in the visual mode press <code>?</code>.</p>
-<p>At this point the most common commands are !reg that can be used to get or set values for the general purpose registers. You can also manipulate the hardware and extended/floating registers. </p>
+</code></pre><p>To get help in visual mode press <code>?</code>.</p>
+<p>At this point the most common commands are !reg which can be used to get or set values of the general purpose registers. You can also manipulate the hardware and extended/floating registers. </p>
 
                     
                     </section>
