@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
-<html lang="en-US">
+<html lang="en-US" manifest="../manifest.appcache">
     <head prefix="og: http://ogp.me/ns# book: http://ogp.me/ns/book#">
         
         <meta charset="UTF-8">
-        <title>Configuration | Radare2book</title>
+        <title>Configuration | R2 &quot;Book&quot;</title>
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="robots" content="index, follow">
@@ -19,8 +19,8 @@
         <link rel="prev" href="../introduction/basic_debugger_session.html" />
         
 
-        <meta property="og:title" content="Configuration | Radare2book">
-        <meta property="og:site_name" content="Radare2book">
+        <meta property="og:title" content="Configuration | R2 &quot;Book&quot;">
+        <meta property="og:site_name" content="R2 &quot;Book&quot;">
         <meta property="og:type" content="book">
         <meta property="og:locale" content="en_US">
 
@@ -32,32 +32,73 @@
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
         <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
-
-        
-        <link rel="stylesheet" href="../gitbook/style.css">
-        
         
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="2" data-basepath=".." data-revision="1399826548055">
+
+        <link rel="stylesheet" href="../gitbook/style.css">
+        
+
+
+        
+    <div class="book" data-github="Maijin/radare2book" data-level="2" data-basepath=".." data-revision="1399827012787">
     <div class="book-header">
     <!-- Actions Left -->
-    <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
+    
+    <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-bookmark-o"></i></a>
+    
     <a href="#" class="btn pull-left toggle-summary"><i class="fa fa-align-justify"></i></a>
     <a href="#" class="btn pull-left toggle-search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+	<div class="dropdown-caret">
+  <span class="caret-outer"></span>
+  <span class="caret-inner"></span>
+</div>
+
+	<div class="btn-group btn-block">
+		<button id="reduce-font-size" class="btn btn-default">A</button>
+		<button id="enlarge-font-size" class="btn btn-default">A</button>
+	</div>
+
+	<ul class="list-group font-family-list">
+		<li class="list-group-item" data-font="0">Serif</li>
+		<li class="list-group-item" data-font="1">Sans</li>
+	</ul>
+
+	<div class="btn-group btn-group-xs btn-block color-theme-list">
+	  <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+	  <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+	</div>
+</div>
+
+    </span>
 
     <!-- Actions Right -->
+    
     <a href="#" target="_blank" class="btn pull-right" data-sharing="google-plus"><i class="fa fa-google-plus"></i></a>
+    
+    
     <a href="#" target="_blank" class="btn pull-right" data-sharing="facebook"><i class="fa fa-facebook"></i></a>
+    
+    
     <a href="#" target="_blank" class="btn pull-right" data-sharing="twitter"><i class="fa fa-twitter"></i></a>
+    
 
-    <a href="https://github.com/Maijin/radare2book/stargazers" target="_blank" class="btn pull-right count-star"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
-    <a href="https://github.com/Maijin/radare2book/watchers" target="_blank" class="btn pull-right count-watch"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
-
+    
+    <a href="https://github.com/Maijin/radare2book/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/Maijin/radare2book/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
 
     <!-- Title -->
-    <h1><a href="../" >Radare2book</a></h1>
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >R2 &quot;Book&quot;</a>
+    </h1>
 </div>
 
     <div class="book-summary">
@@ -65,16 +106,28 @@
         <input type="text" placeholder="Search" class="form-control" />
     </div>
     <ul class="summary">
+        
         <li>
             <a href="https://github.com/Maijin" target="blank">About the author</a>
         </li>
+        
+
+        
         <li>
             <a href="https://github.com/Maijin/radare2book/issues" target="blank">Questions and Issues</a>
         </li>
+        
+
+        
         <li>
             <a href="https://github.com/Maijin/radare2book/edit/master/configuration/intro.md" target="blank">Edit and Contribute</a>
         </li>
+        
+
+        
         <li class="divider"></li>
+        
+
         <li data-level="0" data-path="index.html">
             <a href="../"><i class="fa fa-check"></i> Introduction</a>
         </li>
@@ -82,7 +135,7 @@
             <li  data-level="1" data-path="introduction/intro.html">
                 
                 <a href="../introduction/intro.html">
-                    <i class="fa fa-check"></i> <b>1)</b> Introduction
+                    <i class="fa fa-check"></i> <b>1.</b> Introduction
                 </a>
                 
                 
@@ -91,7 +144,7 @@
                         <li  data-level="1.1" data-path="introduction/history.html">
                             
                             <a href="../introduction/history.html">
-                                <i class="fa fa-check"></i> <b>1.1)</b> History
+                                <i class="fa fa-check"></i> <b>1.1.</b> History
                             </a>
                             
                         </li>
@@ -99,7 +152,7 @@
                         <li  data-level="1.2" data-path="introduction/overview.html">
                             
                             <a href="../introduction/overview.html">
-                                <i class="fa fa-check"></i> <b>1.2)</b> Overview
+                                <i class="fa fa-check"></i> <b>1.2.</b> Overview
                             </a>
                             
                         </li>
@@ -107,7 +160,7 @@
                         <li  data-level="1.3" data-path="introduction/getting_radare.html">
                             
                             <a href="../introduction/getting_radare.html">
-                                <i class="fa fa-check"></i> <b>1.3)</b> Getting radare
+                                <i class="fa fa-check"></i> <b>1.3.</b> Getting radare
                             </a>
                             
                         </li>
@@ -115,7 +168,7 @@
                         <li  data-level="1.4" data-path="introduction/compilation_portability.html">
                             
                             <a href="../introduction/compilation_portability.html">
-                                <i class="fa fa-check"></i> <b>1.4)</b> Compilation and portability
+                                <i class="fa fa-check"></i> <b>1.4.</b> Compilation and portability
                             </a>
                             
                         </li>
@@ -123,7 +176,7 @@
                         <li  data-level="1.5" data-path="introduction/windows_compilation.html">
                             
                             <a href="../introduction/windows_compilation.html">
-                                <i class="fa fa-check"></i> <b>1.5)</b> Windows compilation
+                                <i class="fa fa-check"></i> <b>1.5.</b> Windows compilation
                             </a>
                             
                         </li>
@@ -131,7 +184,7 @@
                         <li  data-level="1.6" data-path="introduction/commandline_flags.html">
                             
                             <a href="../introduction/commandline_flags.html">
-                                <i class="fa fa-check"></i> <b>1.6)</b> Commandline flags
+                                <i class="fa fa-check"></i> <b>1.6.</b> Commandline flags
                             </a>
                             
                         </li>
@@ -139,7 +192,7 @@
                         <li  data-level="1.7" data-path="introduction/basic_usage.html">
                             
                             <a href="../introduction/basic_usage.html">
-                                <i class="fa fa-check"></i> <b>1.7)</b> Basic usage
+                                <i class="fa fa-check"></i> <b>1.7.</b> Basic usage
                             </a>
                             
                         </li>
@@ -147,7 +200,7 @@
                         <li  data-level="1.8" data-path="introduction/command_format.html">
                             
                             <a href="../introduction/command_format.html">
-                                <i class="fa fa-check"></i> <b>1.8)</b> Command format
+                                <i class="fa fa-check"></i> <b>1.8.</b> Command format
                             </a>
                             
                         </li>
@@ -155,7 +208,7 @@
                         <li  data-level="1.9" data-path="introduction/expressions.html">
                             
                             <a href="../introduction/expressions.html">
-                                <i class="fa fa-check"></i> <b>1.9)</b> Expressions
+                                <i class="fa fa-check"></i> <b>1.9.</b> Expressions
                             </a>
                             
                         </li>
@@ -163,7 +216,7 @@
                         <li  data-level="1.10" data-path="introduction/rax2.html">
                             
                             <a href="../introduction/rax2.html">
-                                <i class="fa fa-check"></i> <b>1.10)</b> Rax2
+                                <i class="fa fa-check"></i> <b>1.10.</b> Rax2
                             </a>
                             
                         </li>
@@ -171,7 +224,7 @@
                         <li  data-level="1.11" data-path="introduction/basic_debugger_session.html">
                             
                             <a href="../introduction/basic_debugger_session.html">
-                                <i class="fa fa-check"></i> <b>1.11)</b> Basic debugger session
+                                <i class="fa fa-check"></i> <b>1.11.</b> Basic debugger session
                             </a>
                             
                         </li>
@@ -183,7 +236,7 @@
             <li  data-level="2" data-path="configuration/intro.html">
                 
                 <a href="../configuration/intro.html">
-                    <i class="fa fa-check"></i> <b>2)</b> Configuration
+                    <i class="fa fa-check"></i> <b>2.</b> Configuration
                 </a>
                 
                 
@@ -192,7 +245,7 @@
                         <li  data-level="2.1" data-path="configuration/colors.html">
                             
                             <a href="../configuration/colors.html">
-                                <i class="fa fa-check"></i> <b>2.1)</b> Colors
+                                <i class="fa fa-check"></i> <b>2.1.</b> Colors
                             </a>
                             
                         </li>
@@ -200,7 +253,7 @@
                         <li  data-level="2.2" data-path="configuration/common_configuration_variables.html">
                             
                             <a href="../configuration/common_configuration_variables.html">
-                                <i class="fa fa-check"></i> <b>2.2)</b> Common configuration variables
+                                <i class="fa fa-check"></i> <b>2.2.</b> Common configuration variables
                             </a>
                             
                         </li>
@@ -212,7 +265,7 @@
             <li  data-level="3" data-path="basic_commands/intro.html">
                 
                 <a href="../basic_commands/intro.html">
-                    <i class="fa fa-check"></i> <b>3)</b> Basic Commands
+                    <i class="fa fa-check"></i> <b>3.</b> Basic Commands
                 </a>
                 
                 
@@ -221,7 +274,7 @@
                         <li  data-level="3.1" data-path="basic_commands/seeking.html">
                             
                             <a href="../basic_commands/seeking.html">
-                                <i class="fa fa-check"></i> <b>3.1)</b> Seeking
+                                <i class="fa fa-check"></i> <b>3.1.</b> Seeking
                             </a>
                             
                         </li>
@@ -229,7 +282,7 @@
                         <li  data-level="3.2" data-path="basic_commands/block_size.html">
                             
                             <a href="../basic_commands/block_size.html">
-                                <i class="fa fa-check"></i> <b>3.2)</b> Block Size
+                                <i class="fa fa-check"></i> <b>3.2.</b> Block Size
                             </a>
                             
                         </li>
@@ -237,7 +290,7 @@
                         <li  data-level="3.3" data-path="basic_commands/sections.html">
                             
                             <a href="../basic_commands/sections.html">
-                                <i class="fa fa-check"></i> <b>3.3)</b> Sections
+                                <i class="fa fa-check"></i> <b>3.3.</b> Sections
                             </a>
                             
                         </li>
@@ -245,7 +298,7 @@
                         <li  data-level="3.4" data-path="basic_commands/mapping_files.html">
                             
                             <a href="../basic_commands/mapping_files.html">
-                                <i class="fa fa-check"></i> <b>3.4)</b> Mapping Files
+                                <i class="fa fa-check"></i> <b>3.4.</b> Mapping Files
                             </a>
                             
                         </li>
@@ -253,7 +306,7 @@
                         <li  data-level="3.5" data-path="basic_commands/print_modes.html">
                             
                             <a href="../basic_commands/print_modes.html">
-                                <i class="fa fa-check"></i> <b>3.5)</b> Print Modes
+                                <i class="fa fa-check"></i> <b>3.5.</b> Print Modes
                             </a>
                             
                         </li>
@@ -261,7 +314,7 @@
                         <li  data-level="3.6" data-path="basic_commands/flags.html">
                             
                             <a href="../basic_commands/flags.html">
-                                <i class="fa fa-check"></i> <b>3.6)</b> Flags
+                                <i class="fa fa-check"></i> <b>3.6.</b> Flags
                             </a>
                             
                         </li>
@@ -269,7 +322,7 @@
                         <li  data-level="3.7" data-path="basic_commands/write.html">
                             
                             <a href="../basic_commands/write.html">
-                                <i class="fa fa-check"></i> <b>3.7)</b> Write
+                                <i class="fa fa-check"></i> <b>3.7.</b> Write
                             </a>
                             
                         </li>
@@ -277,7 +330,7 @@
                         <li  data-level="3.8" data-path="basic_commands/zoom.html">
                             
                             <a href="../basic_commands/zoom.html">
-                                <i class="fa fa-check"></i> <b>3.8)</b> Zoom
+                                <i class="fa fa-check"></i> <b>3.8.</b> Zoom
                             </a>
                             
                         </li>
@@ -285,7 +338,7 @@
                         <li  data-level="3.9" data-path="basic_commands/yank_paste.html">
                             
                             <a href="../basic_commands/yank_paste.html">
-                                <i class="fa fa-check"></i> <b>3.9)</b> Yank/Paste
+                                <i class="fa fa-check"></i> <b>3.9.</b> Yank/Paste
                             </a>
                             
                         </li>
@@ -293,7 +346,7 @@
                         <li  data-level="3.10" data-path="basic_commands/comparing_bytes.html">
                             
                             <a href="../basic_commands/comparing_bytes.html">
-                                <i class="fa fa-check"></i> <b>3.10)</b> Comparing Bytes
+                                <i class="fa fa-check"></i> <b>3.10.</b> Comparing Bytes
                             </a>
                             
                         </li>
@@ -305,7 +358,7 @@
             <li  data-level="4" data-path="visual_mode/intro.html">
                 
                 <a href="../visual_mode/intro.html">
-                    <i class="fa fa-check"></i> <b>4)</b> Visual mode
+                    <i class="fa fa-check"></i> <b>4.</b> Visual mode
                 </a>
                 
                 
@@ -314,7 +367,7 @@
                         <li  data-level="4.1" data-path="visual_mode/visual_cursor.html">
                             
                             <a href="../visual_mode/visual_cursor.html">
-                                <i class="fa fa-check"></i> <b>4.1)</b> Visual cursor
+                                <i class="fa fa-check"></i> <b>4.1.</b> Visual cursor
                             </a>
                             
                         </li>
@@ -322,7 +375,7 @@
                         <li  data-level="4.2" data-path="visual_mode/visual_insert.html">
                             
                             <a href="../visual_mode/visual_insert.html">
-                                <i class="fa fa-check"></i> <b>4.2)</b> Visual inserts
+                                <i class="fa fa-check"></i> <b>4.2.</b> Visual inserts
                             </a>
                             
                         </li>
@@ -330,7 +383,7 @@
                         <li  data-level="4.3" data-path="visual_mode/visual_xrefs.html">
                             
                             <a href="../visual_mode/visual_xrefs.html">
-                                <i class="fa fa-check"></i> <b>4.3)</b> Visual XREFS
+                                <i class="fa fa-check"></i> <b>4.3.</b> Visual XREFS
                             </a>
                             
                         </li>
@@ -342,7 +395,7 @@
             <li  data-level="5" data-path="search_bytes/intro.html">
                 
                 <a href="../search_bytes/intro.html">
-                    <i class="fa fa-check"></i> <b>5)</b> Searching bytes
+                    <i class="fa fa-check"></i> <b>5.</b> Searching bytes
                 </a>
                 
                 
@@ -351,7 +404,7 @@
                         <li  data-level="5.1" data-path="search_bytes/basic_searches.html">
                             
                             <a href="../search_bytes/basic_searches.html">
-                                <i class="fa fa-check"></i> <b>5.1)</b> Basic Searches
+                                <i class="fa fa-check"></i> <b>5.1.</b> Basic Searches
                             </a>
                             
                         </li>
@@ -359,7 +412,7 @@
                         <li  data-level="5.2" data-path="search_bytes/configurating_the_search.html">
                             
                             <a href="../search_bytes/configurating_the_search.html">
-                                <i class="fa fa-check"></i> <b>5.2)</b> Configurating the search
+                                <i class="fa fa-check"></i> <b>5.2.</b> Configurating the search
                             </a>
                             
                         </li>
@@ -367,7 +420,7 @@
                         <li  data-level="5.3" data-path="search_bytes/pattern_search.html">
                             
                             <a href="../search_bytes/pattern_search.html">
-                                <i class="fa fa-check"></i> <b>5.3)</b> Pattern Search
+                                <i class="fa fa-check"></i> <b>5.3.</b> Pattern Search
                             </a>
                             
                         </li>
@@ -375,7 +428,7 @@
                         <li  data-level="5.4" data-path="search_bytes/automatization.html">
                             
                             <a href="../search_bytes/automatization.html">
-                                <i class="fa fa-check"></i> <b>5.4)</b> Automatization
+                                <i class="fa fa-check"></i> <b>5.4.</b> Automatization
                             </a>
                             
                         </li>
@@ -383,7 +436,7 @@
                         <li  data-level="5.5" data-path="search_bytes/backward_search.html">
                             
                             <a href="../search_bytes/backward_search.html">
-                                <i class="fa fa-check"></i> <b>5.5)</b> Backward Search
+                                <i class="fa fa-check"></i> <b>5.5.</b> Backward Search
                             </a>
                             
                         </li>
@@ -391,7 +444,7 @@
                         <li  data-level="5.6" data-path="search_bytes/search_in_assembly.html">
                             
                             <a href="../search_bytes/search_in_assembly.html">
-                                <i class="fa fa-check"></i> <b>5.6)</b> Search in assembly
+                                <i class="fa fa-check"></i> <b>5.6.</b> Search in assembly
                             </a>
                             
                         </li>
@@ -399,7 +452,7 @@
                         <li  data-level="5.7" data-path="search_bytes/searching_aes_keys.html">
                             
                             <a href="../search_bytes/searching_aes_keys.html">
-                                <i class="fa fa-check"></i> <b>5.7)</b> Searching AES Keys
+                                <i class="fa fa-check"></i> <b>5.7.</b> Searching AES Keys
                             </a>
                             
                         </li>
@@ -411,7 +464,7 @@
             <li  data-level="6" data-path="disassembling/intro.html">
                 
                 <a href="../disassembling/intro.html">
-                    <i class="fa fa-check"></i> <b>6)</b> Disassembling
+                    <i class="fa fa-check"></i> <b>6.</b> Disassembling
                 </a>
                 
                 
@@ -420,7 +473,7 @@
                         <li  data-level="6.1" data-path="disassembling/adding_metadata.html">
                             
                             <a href="../disassembling/adding_metadata.html">
-                                <i class="fa fa-check"></i> <b>6.1)</b> Adding metadata
+                                <i class="fa fa-check"></i> <b>6.1.</b> Adding metadata
                             </a>
                             
                         </li>
@@ -432,7 +485,7 @@
             <li  data-level="7" data-path="rabin2/intro.html">
                 
                 <a href="../rabin2/intro.html">
-                    <i class="fa fa-check"></i> <b>7)</b> Rabin2
+                    <i class="fa fa-check"></i> <b>7.</b> Rabin2
                 </a>
                 
                 
@@ -441,7 +494,7 @@
                         <li  data-level="7.1" data-path="rabin2/file_identification.html">
                             
                             <a href="../rabin2/file_identification.html">
-                                <i class="fa fa-check"></i> <b>7.1)</b> File identification
+                                <i class="fa fa-check"></i> <b>7.1.</b> File identification
                             </a>
                             
                         </li>
@@ -449,7 +502,7 @@
                         <li  data-level="7.2" data-path="rabin2/entrypoints.html">
                             
                             <a href="../rabin2/entrypoints.html">
-                                <i class="fa fa-check"></i> <b>7.2)</b> Entrypoint
+                                <i class="fa fa-check"></i> <b>7.2.</b> Entrypoint
                             </a>
                             
                         </li>
@@ -457,7 +510,7 @@
                         <li  data-level="7.3" data-path="rabin2/imports.html">
                             
                             <a href="../rabin2/imports.html">
-                                <i class="fa fa-check"></i> <b>7.3)</b> Imports
+                                <i class="fa fa-check"></i> <b>7.3.</b> Imports
                             </a>
                             
                         </li>
@@ -465,7 +518,7 @@
                         <li  data-level="7.4" data-path="rabin2/symbols.html">
                             
                             <a href="../rabin2/symbols.html">
-                                <i class="fa fa-check"></i> <b>7.4)</b> Symbols (exports)
+                                <i class="fa fa-check"></i> <b>7.4.</b> Symbols (exports)
                             </a>
                             
                         </li>
@@ -473,7 +526,7 @@
                         <li  data-level="7.5" data-path="rabin2/libraries.html">
                             
                             <a href="../rabin2/libraries.html">
-                                <i class="fa fa-check"></i> <b>7.5)</b> Libraries
+                                <i class="fa fa-check"></i> <b>7.5.</b> Libraries
                             </a>
                             
                         </li>
@@ -481,7 +534,7 @@
                         <li  data-level="7.6" data-path="rabin2/strings.html">
                             
                             <a href="../rabin2/strings.html">
-                                <i class="fa fa-check"></i> <b>7.6)</b> Strings
+                                <i class="fa fa-check"></i> <b>7.6.</b> Strings
                             </a>
                             
                         </li>
@@ -489,7 +542,7 @@
                         <li  data-level="7.7" data-path="rabin2/program_sections.html">
                             
                             <a href="../rabin2/program_sections.html">
-                                <i class="fa fa-check"></i> <b>7.7)</b> Program sections
+                                <i class="fa fa-check"></i> <b>7.7.</b> Program sections
                             </a>
                             
                         </li>
@@ -501,7 +554,7 @@
             <li  data-level="8" data-path="rasm2/intro.html">
                 
                 <a href="../rasm2/intro.html">
-                    <i class="fa fa-check"></i> <b>8)</b> Rasm2
+                    <i class="fa fa-check"></i> <b>8.</b> Rasm2
                 </a>
                 
                 
@@ -510,7 +563,7 @@
                         <li  data-level="8.1" data-path="rasm2/assemble.html">
                             
                             <a href="../rasm2/assemble.html">
-                                <i class="fa fa-check"></i> <b>8.1)</b> Assemble
+                                <i class="fa fa-check"></i> <b>8.1.</b> Assemble
                             </a>
                             
                         </li>
@@ -518,7 +571,7 @@
                         <li  data-level="8.2" data-path="rasm2/disassemble.html">
                             
                             <a href="../rasm2/disassemble.html">
-                                <i class="fa fa-check"></i> <b>8.2)</b> Disassemble
+                                <i class="fa fa-check"></i> <b>8.2.</b> Disassemble
                             </a>
                             
                         </li>
@@ -530,7 +583,7 @@
             <li  data-level="9" data-path="analysis/intro.html">
                 
                 <a href="../analysis/intro.html">
-                    <i class="fa fa-check"></i> <b>9)</b> Analysis
+                    <i class="fa fa-check"></i> <b>9.</b> Analysis
                 </a>
                 
                 
@@ -539,7 +592,7 @@
                         <li  data-level="9.1" data-path="analysis/code_analysis.html">
                             
                             <a href="../analysis/code_analysis.html">
-                                <i class="fa fa-check"></i> <b>9.1)</b> Code analysis
+                                <i class="fa fa-check"></i> <b>9.1.</b> Code analysis
                             </a>
                             
                         </li>
@@ -551,7 +604,7 @@
             <li  data-level="10" data-path="rahash2/intro.html">
                 
                 <a href="../rahash2/intro.html">
-                    <i class="fa fa-check"></i> <b>10)</b> Rahash2
+                    <i class="fa fa-check"></i> <b>10.</b> Rahash2
                 </a>
                 
                 
@@ -560,7 +613,7 @@
                         <li  data-level="10.1" data-path="rahash2/rahash_tool.html">
                             
                             <a href="../rahash2/rahash_tool.html">
-                                <i class="fa fa-check"></i> <b>10.1)</b> Rahash tool
+                                <i class="fa fa-check"></i> <b>10.1.</b> Rahash tool
                             </a>
                             
                         </li>
@@ -572,18 +625,25 @@
             <li  data-level="11" data-path="debugger/intro.html">
                 
                 <a href="../debugger/intro.html">
-                    <i class="fa fa-check"></i> <b>11)</b> Debugger
+                    <i class="fa fa-check"></i> <b>11.</b> Debugger
                 </a>
                 
                 
             </li>
         
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank">Generated using GitBook</a>
+        </li>
+        
     </ul>
 </div>
 
-    <div class="book-body" tabindex="-1">
+    <div class="book-body">
         <div class="body-inner">
-            <div class="page-wrapper">
+            <div class="page-wrapper" tabindex="-1">
                 <div class="book-progress">
     <div class="bar">
         <div class="inner" style="width: 28.571428571428573%;min-width: 26.785714285714285%;"></div>
@@ -709,42 +769,42 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_18">
+                    <section class="normal" id="section-gitbook_17">
                     
                         <h1 id="configuration">Configuration</h1>
 <p>The core reads ~/.radare2rc while starting, so you can setup there some <code>e</code> commands to set it up in your favorite way.</p>
 <p>To avoid parsing this file, use <code>-n</code> and to get a cleaner output for using radare in batch mode maybe is better to just drop the verbosity with <code>-v</code>.</p>
 <p>All the configuration of radare is done with the <code>eval</code> command which allows the user to change some variables from an internal hashtable containing string pairs.</p>
 <p>The most common configuration looks like this:</p>
-<pre><code>$ cat ~/<span class="hljs-preprocessor">.radarerc</span>
-e scr<span class="hljs-preprocessor">.color</span> = true
-e dbg<span class="hljs-preprocessor">.bep</span>   = loader
+<pre><code>$ cat ~/.radarerc
+e scr.color = true
+e dbg.bep   = loader
 </code></pre><p>These configurations can be also defined using the <code>-e</code> flag of radare while loading it, so you can setup different initial configurations from the commandline without having to change to rc file.</p>
-<pre><code>$ radare <span class="hljs-attribute">-n</span> <span class="hljs-attribute">-e</span> scr<span class="hljs-built_in">.</span>color<span class="hljs-subst">=</span><span class="hljs-literal">true</span> <span class="hljs-attribute">-e</span> asm<span class="hljs-built_in">.</span>syntax<span class="hljs-subst">=</span>intel <span class="hljs-attribute">-d</span> /bin/ls
+<pre><code>$ radare -n -e scr.color=true -e asm.syntax=intel -d /bin/ls
 </code></pre><p>All the configuration is stored in a hash table grouped by different root names (cfg., file., dbg., ..)</p>
 <p>To get a list of the configuration variables just type <code>e</code> in the prompt. All the basic commands can be reduced to a single char. You can also list the configuration variables of a single eval configruation group ending the command argument with a dot <code>.</code>.</p>
 <p>There are two enhanced interfaces to help users to interactively configure this hashtable. One is called <code>emenu</code> and provides a shell for walking through the tree and change variables.</p>
 <p>To get a help about this command you can type <code>e?</code>:</p>
-<pre><code>Usage: e[?] [var[=<span class="hljs-built_in">value</span>]]
+<pre><code>Usage: e[?] [var[=value]]
 e?              show this help
-e?asm.<span class="hljs-keyword">bytes</span>     show description
-e??             list config vars <span class="hljs-operator">with</span> description
+e?asm.bytes     show description
+e??             list config vars with description
 e               list config vars
 e-              reset config vars
-e*              dump config vars <span class="hljs-operator">in</span> r commands
-e!<span class="hljs-operator">a</span>             invert <span class="hljs-operator">the</span> boolean <span class="hljs-built_in">value</span> <span class="hljs-operator">of</span> <span class="hljs-string">'a'</span> var
-er [key]        <span class="hljs-built_in">set</span> config key <span class="hljs-keyword">as</span> readonly. no way back
-ec [k] [color]  <span class="hljs-built_in">set</span> color <span class="hljs-keyword">for</span> given key (prompt, <span class="hljs-built_in">offset</span>, ...)
-e <span class="hljs-operator">a</span>             <span class="hljs-built_in">get</span> <span class="hljs-built_in">value</span> <span class="hljs-operator">of</span> var <span class="hljs-string">'a'</span>
-e <span class="hljs-operator">a</span>=b           <span class="hljs-built_in">set</span> var <span class="hljs-string">'a'</span> <span class="hljs-operator">the</span> <span class="hljs-string">'b'</span> <span class="hljs-built_in">value</span>
-env [k[=v]]     <span class="hljs-built_in">get</span>/<span class="hljs-built_in">set</span> environment <span class="hljs-built_in">variable</span>
+e*              dump config vars in r commands
+e!a             invert the boolean value of &#39;a&#39; var
+er [key]        set config key as readonly. no way back
+ec [k] [color]  set color for given key (prompt, offset, ...)
+e a             get value of var &#39;a&#39;
+e a=b           set var &#39;a&#39; the &#39;b&#39; value
+env [k[=v]]     get/set environment variable
 </code></pre><p>There is a easier <code>e</code> interface accessible from the Visual mode, just typing <code>Ve</code> after entering this mode.</p>
 <pre><code>Eval spaces:                                                                   
 
 &gt;  anal                                                                        
-   <span class="hljs-keyword">asm</span>                                                                         
+   asm                                                                         
    scr                                                                         
-   <span class="hljs-keyword">asm</span>                                                                         
+   asm                                                                         
    bin                                                                         
    cfg                                                                         
    diff                                                                        
@@ -770,19 +830,40 @@ env [k[=v]]     <span class="hljs-built_in">get</span>/<span class="hljs-built_i
         </div>
 
         
-        <a href="../introduction/basic_debugger_session.html" class="navigation navigation-prev"><i class="fa fa-angle-left"></i></a>
+        <a href="../introduction/basic_debugger_session.html" class="navigation navigation-prev "><i class="fa fa-angle-left"></i></a>
         
         
-        <a href="../configuration/colors.html" class="navigation navigation-next"><i class="fa fa-angle-right"></i></a>
+        <a href="../configuration/colors.html" class="navigation navigation-next "><i class="fa fa-angle-right"></i></a>
         
     </div>
 </div>
 
         
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/mode-javascript.js"></script>
         <script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
         <script src="../gitbook/app.js"></script>
         
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mixpanel/plugin.js"></script>
+    
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
     </body>
 </html>
