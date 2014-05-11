@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="3.10" data-basepath=".." data-revision="1398629676614">
+<div class="book" data-github="Maijin/radare2book" data-level="3.10" data-basepath=".." data-revision="1399826548055">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -709,10 +709,10 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_9">
+                    <section class="normal" id="section-gitbook_10">
                     
                         <h2 id="comparing-bytes">Comparing bytes</h2>
-<p>You can compare data using the <code>c</code> command that accepts different input formats and compares the input against the bytes in the current seek.</p>
+<p>You can compare data using the <code>c</code> command. It accepts an input in various formats and compares the input against the bytes in the current seek.</p>
 <pre><code>[<span class="hljs-number">0x00404888</span>]&gt; c?
 |Usage: c[?dfx] [argument]
 | c  [<span class="hljs-type">string</span>]    Compares a plain <span class="hljs-keyword">with</span> escaped chars <span class="hljs-type">string</span>
@@ -735,24 +735,24 @@
 Compare <span class="hljs-number">3</span>/<span class="hljs-number">4</span> equal bytes
 <span class="hljs-number">0x00000002</span> (byte=<span class="hljs-number">03</span>)   <span class="hljs-number">90</span> <span class="hljs-string">' '</span>  -&gt;  <span class="hljs-number">4</span>c <span class="hljs-string">'L'</span>
 [<span class="hljs-number">0x08048000</span>]&gt; 
-</code></pre><p>Another subcommand of <code>c</code> (compare) command is the <code>cc</code> which stands for &#39;compare code&#39;.</p>
+</code></pre><p>Another subcommand of <code>c</code> (compare) command is <code>cc</code> which stands for &#39;compare code&#39;.</p>
 <pre><code>[<span class="hljs-number">0x4A13B8C0</span>]&gt; cc <span class="hljs-number">0x39e8e089</span> <span class="hljs-decorator">@ 0x4A13B8C0</span>
 
 [<span class="hljs-number">0x08049A80</span>]&gt; cc sym.main2 <span class="hljs-decorator">@ sym.main</span>
-</code></pre><p><code>c8</code> Compare a quadword from the current seek (0x00000000) from a math expression</p>
+</code></pre><p><code>c8</code> compares a quadword from the current seek (0x00000000) from a math expression</p>
 <pre><code>[<span class="hljs-number">0</span>x00000000]&gt; <span class="hljs-function_or_atom">c8</span> <span class="hljs-number">4</span>
 
 <span class="hljs-variable">Compare</span> <span class="hljs-number">1</span>/<span class="hljs-number">8</span> <span class="hljs-function_or_atom">equal</span> <span class="hljs-function_or_atom">bytes</span> (<span class="hljs-number">0</span><span class="hljs-comment">%)</span>
 <span class="hljs-number">0</span>x00000000 (<span class="hljs-function_or_atom">byte</span>=<span class="hljs-number">01</span>)   <span class="hljs-number">7</span>f <span class="hljs-string">' '</span>  <span class="hljs-arrow">-&gt;</span>  <span class="hljs-number">04</span> <span class="hljs-string">' '</span>
 <span class="hljs-number">0</span>x00000001 (<span class="hljs-function_or_atom">byte</span>=<span class="hljs-number">02</span>)   <span class="hljs-number">45</span> <span class="hljs-string">'E'</span>  <span class="hljs-arrow">-&gt;</span>  <span class="hljs-number">00</span> <span class="hljs-string">' '</span>
 <span class="hljs-number">0</span>x00000002 (<span class="hljs-function_or_atom">byte</span>=<span class="hljs-number">03</span>)   <span class="hljs-number">4</span>c <span class="hljs-string">'L'</span>  <span class="hljs-arrow">-&gt;</span>  <span class="hljs-number">00</span> <span class="hljs-string">' '</span>
-</code></pre><p>This number can be an math expressions using flag names and so:</p>
+</code></pre><p>The number paramater can of course also be a math expressions using flag names and so on:</p>
 <pre><code>[<span class="hljs-number">0x00000000</span>]&gt; cx <span class="hljs-number">7</span>f469046
 
 Compare <span class="hljs-number">2</span>/<span class="hljs-number">4</span> equal bytes
 <span class="hljs-number">0x00000001</span> (<span class="hljs-keyword">byte</span>=<span class="hljs-number">02</span>)   <span class="hljs-number">45</span> <span class="hljs-string">'E'</span>  -&gt;  <span class="hljs-number">46</span> <span class="hljs-string">'F'</span>
 <span class="hljs-number">0x00000002</span> (<span class="hljs-keyword">byte</span>=<span class="hljs-number">03</span>)   <span class="hljs-number">4</span>c <span class="hljs-string">'L'</span>  -&gt;  <span class="hljs-number">90</span> <span class="hljs-string">' '</span>
-</code></pre><p>We can use the compare command against a file previously dumped to disk from the contents of the current block.</p>
+</code></pre><p>We can use the compare command to compare the current block to a file previously dumped to disk.</p>
 <pre><code>r2 /bin/<span class="hljs-literal">true</span>
 [<span class="hljs-number">0x08049A80</span>]&gt; s <span class="hljs-number">0</span>
 [<span class="hljs-number">0x08048000</span>]&gt; cf /bin/<span class="hljs-literal">true</span>

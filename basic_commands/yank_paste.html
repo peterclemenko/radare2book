@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="3.9" data-basepath=".." data-revision="1398629676614">
+<div class="book" data-github="Maijin/radare2book" data-level="3.9" data-basepath=".." data-revision="1399826548055">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -709,10 +709,10 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_13">
+                    <section class="normal" id="section-gitbook_14">
                     
                         <h2 id="yank-paste">Yank/Paste</h2>
-<p>You can yank/paste bytes in visual mode using the <code>y</code> and <code>Y</code> key bindings that are alias for the <code>y</code> and <code>yy</code> commands of the shell. There is an internal buffer that stores N bytes from the current seek. You can write-back to another seek using the <code>yy</code> one.</p>
+<p>You can yank/paste bytes in visual mode using the <code>y</code> and <code>Y</code> key bindings which are alias for the <code>y</code> and <code>yy</code> commands of the shell. These commands operate on an internal buffer which stores N bytes counted from the current seek. You can write-back to another seek using the <code>yy</code> command.</p>
 <pre><code>[<span class="hljs-number">0x00000000</span>]&gt; y?
 |Usage: y[ptxy] [len] [[@]addr]
 | y                show yank buffer information (srcoff len bytes)
@@ -730,7 +730,7 @@
 <span class="hljs-attr_selector">[0x00000100]</span>&gt; <span class="hljs-tag">y</span> 100      ; <span class="hljs-tag">yanks</span> 100 <span class="hljs-tag">bytes</span> <span class="hljs-tag">from</span> <span class="hljs-tag">here</span>
 <span class="hljs-attr_selector">[0x00000200]</span>&gt; <span class="hljs-tag">s</span> 0<span class="hljs-tag">x200</span>    ; <span class="hljs-tag">seek</span> 0<span class="hljs-tag">x200</span>
 <span class="hljs-attr_selector">[0x00000200]</span>&gt; <span class="hljs-tag">yy</span>         ; <span class="hljs-tag">pastes</span> 100 <span class="hljs-tag">bytes</span>
-</code></pre><p>You can perform a yank and paste in a single line by just using the <code>yt</code> command (yank-to). The syntax is the following:</p>
+</code></pre><p>You can perform a yank and paste in a single line by just using the <code>yt</code> command (yank-to). The syntax is as follows:</p>
 <pre><code>[<span class="hljs-number">0x4A13B8C0</span>]&gt; x
    offset   <span class="hljs-number">0</span> <span class="hljs-number">1</span>  <span class="hljs-number">2</span> <span class="hljs-number">3</span>  <span class="hljs-number">4</span> <span class="hljs-number">5</span>  <span class="hljs-number">6</span> <span class="hljs-number">7</span>  <span class="hljs-number">8</span> <span class="hljs-number">9</span>  <span class="hljs-constant">A</span> <span class="hljs-constant">B</span>  <span class="hljs-number">01234567</span>89AB
 <span class="hljs-number">0x4A13B8C0</span>, <span class="hljs-number">89</span>e<span class="hljs-number">0</span> e839 <span class="hljs-number">0700</span> <span class="hljs-number">00</span>89 c7e8 e2ff ...<span class="hljs-number">9</span>........

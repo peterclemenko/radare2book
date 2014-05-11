@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="3.5" data-basepath=".." data-revision="1398629676614">
+<div class="book" data-github="Maijin/radare2book" data-level="3.5" data-basepath=".." data-revision="1399826548055">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -709,12 +709,12 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_4">
+                    <section class="normal" id="section-gitbook_5">
                     
                         <h2 id="3-5-print-modes">3.5 Print modes</h2>
-<p>One of the efforts in radare is the way to show the information to the user. This is interpreting the bytes and giving an almost readable output format.</p>
-<p>The bytes can be represented as integers, shorts, longs, floats, timestamps, hexpair strings, or things more complex like C structures, disassembly, decompilations, external processors, ..</p>
-<p>This is a list of the available print modes listable with <code>p?</code>:</p>
+<p>One of the key features of radare is displaying information in various formats. The goal is to offer a selection of displaying choices to best interpret binary data.</p>
+<p>Binary data can be represented as integers, shorts, longs, floats, timestamps, hexpair strings, or more complex formats like C structures, disassembly, decompilations, external processors, ..</p>
+<p>Here&#39;s a list of the available print modes listable using <code>p?</code>:</p>
 <pre><code>[0x08049AD0]&gt; p?
 Usage: p[=68abcdDfiImrstuxz] [arg|len]
 p=[bep?] [blks]  show entropy/printable chars/chars bars
@@ -783,13 +783,13 @@ false
 [<span class="hljs-number">0</span>x08048000]&gt; <span class="hljs-built_in">eval</span> cfg.bigendian = <span class="hljs-literal">true</span>
 [<span class="hljs-number">0</span>x08048000]&gt; pt <span class="hljs-number">4</span>
 <span class="hljs-number">20</span>:<span class="hljs-number">05</span>:<span class="hljs-number">13001</span> <span class="hljs-number">09</span>:<span class="hljs-number">29</span>:<span class="hljs-number">21</span> +<span class="hljs-number">0000</span>
-</code></pre><p>As you can see, the endianness affects to the print formats. Once printing these filetimes you can grep the results by the year for example:</p>
+</code></pre><p>As you can see, the endianness effect on the print formats. Once you have printed a timestamp you can grep the results by the year for example:</p>
 <pre><code>[<span class="hljs-number">0</span>x08048000]&gt; pt <span class="hljs-string">| grep 1974 | wc -l</span>
 <span class="hljs-number">15</span>
 [<span class="hljs-number">0</span>x08048000]&gt; pt <span class="hljs-string">| grep 2022</span>
 <span class="hljs-number">27</span>:<span class="hljs-number">04</span>:<span class="hljs-number">2022</span> <span class="hljs-number">16</span>:<span class="hljs-number">15</span>:<span class="hljs-number">43</span> +<span class="hljs-number">0000</span>
-</code></pre><p>The date format printed can be configured with the <code>cfg.datefmt</code> variable following the strftime(3) format.</p>
-<p>Extracted from the strftime(3) manpage:</p>
+</code></pre><p>The default date format can be configured using the <code>cfg.datefmt</code> variable. The field definitions follow the well known strftime(3) format.</p>
+<p>Excerpt from the strftime(3) manpage:</p>
 <pre><code>%a  The abbreviated <span class="hljs-property">name</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> <span class="hljs-property">day</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> week according <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> current locale.
 %A  The full <span class="hljs-property">name</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> <span class="hljs-property">day</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> week according <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> current locale.
 %b  The abbreviated <span class="hljs-property">month</span> <span class="hljs-property">name</span> according <span class="hljs-keyword">to</span> <span class="hljs-keyword">the</span> current locale.
@@ -835,7 +835,7 @@ false
 %+  The <span class="hljs-type">date</span> <span class="hljs-keyword">and</span> <span class="hljs-property">time</span> <span class="hljs-keyword">in</span> <span class="hljs-type">date</span>(<span class="hljs-number">1</span>) format. (TZ) (Not supported <span class="hljs-keyword">in</span> glibc2.)
 %%  A literal '%' <span class="hljs-property">character</span>.
 </code></pre><h3 id="3-5-3-basic-types">3.5.3 Basic types</h3>
-<p>All basic types are mapped as print modes. If you are interested in a more complex structure or just type : <code>pf?</code></p>
+<p>There are print modes available for all basic types. If you are interested in a more complex structure or just type : <code>pf?</code></p>
 <p>Here&#39;s the list of the print (pf?) modes for basic types:</p>
 <pre><code>Usage: pf[.key[.field[=<span class="hljs-built_in">value</span>]]|[ val]]|[times][<span class="hljs-built_in">format</span>] [arg0 arg1 ...]
 Examples:
@@ -891,8 +891,8 @@ unsigned char buffer<span class="hljs-special">[</span>_BUFFER_SIZE<span class="
 <span class="hljs-special">[</span>0x7fcd6a891630<span class="hljs-special">]</span>&gt; pcs
 "<span class="hljs-command">\x</span>48<span class="hljs-command">\x</span>89<span class="hljs-command">\xe</span>7<span class="hljs-command">\xe</span>8<span class="hljs-command">\x</span>68<span class="hljs-command">\x</span>39<span class="hljs-command">\x</span>00<span class="hljs-command">\x</span>00<span class="hljs-command">\x</span>49<span class="hljs-command">\x</span>89<span class="hljs-command">\xc</span>4<span class="hljs-command">\x</span>8b<span class="hljs-command">\x</span>05<span class="hljs-command">\xef</span><span class="hljs-command">\x</span>16<span class="hljs-command">\x</span>22<span class="hljs-command">\x</span>00<span class="hljs-command">\x</span>5a<span class="hljs-command">\x</span>48<span class="hljs-command">\x</span>8d<span class="hljs-command">\x</span>24<span class="hljs-command">\xc</span>4<span class="hljs-command">\x</span>29<span class="hljs-command">\xc</span>2<span class="hljs-command">\x</span>52<span class="hljs-command">\x</span>48<span class="hljs-command">\x</span>89<span class="hljs-command">\xd</span>6<span class="hljs-command">\x</span>49<span class="hljs-command">\x</span>89<span class="hljs-command">\xe</span>5<span class="hljs-command">\x</span>48<span class="hljs-command">\x</span>83<span class="hljs-command">\xe</span>4<span class="hljs-command">\xf</span>0<span class="hljs-command">\x</span>48<span class="hljs-command">\x</span>8b<span class="hljs-command">\x</span>3d<span class="hljs-command">\x</span>06<span class="hljs-command">\x</span>1a
 </code></pre><h3 id="3-5-5-strings">3.5.5 Strings</h3>
-<p>Strings are probably one of the most important entrypoints while starting to reverse engineer a program because they are usually referencing information about the functions actions ( asserts, debug or info messages, ...).</p>
-<p>So it is important for radare to be able to print strings in multiple ways:</p>
+<p>Strings are probably one of the most important entrypoints when starting to reverse engineer a program because they are usually referencing information about the functions actions (asserts, debug or info messages, ...).</p>
+<p>Therefore radare supports various string formats:</p>
 <pre><code>[<span class="hljs-number">0x00404888</span>]&gt; ps?
 |Usage: ps[zpw] [N]
 | ps  = <span class="hljs-built_in">print</span> <span class="hljs-built_in">string</span>
@@ -901,7 +901,7 @@ unsigned char buffer<span class="hljs-special">[</span>_BUFFER_SIZE<span class="
 | psz = <span class="hljs-built_in">print</span> zero terminated <span class="hljs-built_in">string</span>
 | psp = <span class="hljs-built_in">print</span> pascal <span class="hljs-built_in">string</span>
 | psw = <span class="hljs-built_in">print</span> wide <span class="hljs-built_in">string</span>
-</code></pre><p>Most common strings will be just zero-terminated ones. Here&#39;s an example by using the debugger to continue the execution of the program until it executes the &#39;open&#39; syscall. When we recover the control over the process, we get the arguments passed to the syscall, pointed by %ebx. Which is obviously a zero terminated string.</p>
+</code></pre><p>Most strings will be zero-terminated. Here&#39;s an example by using the debugger to continue the execution of the program until it executes the &#39;open&#39; syscall. When we recover the control over the process, we get the arguments passed to the syscall, pointed by %ebx. In the case of the &#39;open&#39; call, this parameter is a zero terminated string which we can inspect using <code>psz</code>.</p>
 <pre><code>[<span class="hljs-number">0x4A13B8C0</span>]&gt; dcs <span class="hljs-keyword">open</span>
 <span class="hljs-number">0x4a14fc24</span> <span class="hljs-keyword">syscall</span>(<span class="hljs-number">5</span>) <span class="hljs-keyword">open</span> ( <span class="hljs-number">0x4a151c91</span> <span class="hljs-number">0x00000000</span> <span class="hljs-number">0x00000000</span> ) = <span class="hljs-number">0xffffffda</span>
 [<span class="hljs-number">0x4A13B8C0</span>]&gt; dr
@@ -913,14 +913,14 @@ unsigned char buffer<span class="hljs-special">[</span>_BUFFER_SIZE<span class="
 [<span class="hljs-number">0x4A13B8C0</span>]&gt; psz @ <span class="hljs-number">0x4a151c91</span>
 /etc/ld.so.cache
 </code></pre><h3 id="3-5-6-print-memory">3.5.6 Print memory</h3>
-<p>It is also possible to print various packed data types in a single line using the <code>pf</code> command. </p>
+<p>It is also possible to print various packed data types using the <code>pf</code> command. </p>
 <pre><code>[0xB7F08810]&gt; pf xxS @ rsp
 <span class="hljs-constant">0x7fff0d29da30</span> = 0x00000001 
 <span class="hljs-constant">0x7fff0d29da34</span> = 0x00000000 
 <span class="hljs-constant">0x7fff0d29da38</span> = 0x7fff0d29da38 -&gt; 0x0d29f7ee /bin/ls
-</code></pre><p>This is sometimes useful for looking at the arguments passed to a function, by just giving the &#39;format memory string&#39; as argument and temporally changing the current seek with the <code>@</code> token.</p>
-<p>It is also possible to define arrays of structures with <code>pf</code>. Just prefix the format string with a numeric value.</p>
-<p>You can also define a name for each field of the structure by giving them as optional arguments after the format string splitted by spaces.</p>
+</code></pre><p>This can for instance be used to look at the arguments passed to a function. To achive this, simply pass a &#39;format memory string&#39; as an argument to <code>pf</code> and temporally change the current seek position / offset using <code>@</code>.</p>
+<p>It is also possible to define arrays of structures with <code>pf</code>. To do this, prefix the format string with a numeric value.</p>
+<p>You can also define a name for each field of the structure by appending them as a space-separated argument list.</p>
 <pre><code>[<span class="hljs-number">0x4A13B8C0</span>]&gt; pf <span class="hljs-number">2</span>*xw pointer <span class="hljs-typedef"><span class="hljs-keyword">type</span> @ esp</span>
 <span class="hljs-number">0x00404888</span> [<span class="hljs-number">0</span>] {
    pointer : 
@@ -931,7 +931,7 @@ unsigned char buffer<span class="hljs-special">[</span>_BUFFER_SIZE<span class="
 (*<span class="hljs-number">0x50f0e483</span>)    pointer : <span class="hljs-number">0x00404892</span> = <span class="hljs-number">0x50f0e483</span> 
      <span class="hljs-typedef"><span class="hljs-keyword">type</span> : 0x0040489a = 0x2440 </span>
 }
-</code></pre><p>A practical example for using pf on a binary GStreamer plugin:</p>
+</code></pre><p>A practical example for using <code>pf</code> on a binary of a GStreamer plugin:</p>
 <pre><code>$ radare ~/.gstreamer-<span class="hljs-number">0.10</span>/plugins/libgstflumms.so
 [<span class="hljs-number">0</span>x000028A0]&gt; seek sym.gst_plugin_desc
 [<span class="hljs-number">0</span>x000185E0]&gt; pf iissxsssss major minor name desc _init <span class="hljs-keyword">version</span> \
@@ -947,7 +947,7 @@ unsigned char buffer<span class="hljs-special">[</span>_BUFFER_SIZE<span class="
    <span class="hljs-keyword">package</span> : <span class="hljs-number">0</span>x00018600 = <span class="hljs-number">0</span>x00018600 Fluendo MMS source 
     origin : <span class="hljs-number">0</span>x00018604 = <span class="hljs-number">0</span>x00018604 http:<span class="hljs-comment">//www.fluendo.com </span>
 </code></pre><h3 id="3-5-7-disassembly">3.5.7 Disassembly</h3>
-<p>The <code>pd</code> command is the one used to disassemble code, it accepts a numeric value to specify how many opcodes are wanted to be disassembled. The <code>pD</code> one acts in the same way, but using a number-of-bytes instead of counting instructions.</p>
+<p>The <code>pd</code> command is used to disassemble code. It accepts a numeric value to specify how many opcodes should be disassembled. The <code>pD</code> command is similar but instead of a number of instructions it decompiles a given number of bytes.</p>
 <pre><code> d : disassembly N opcodes   count <span class="hljs-operator">of</span> opcodes
  D : asm.arch disassembler   bsize <span class="hljs-keyword">bytes</span>
 
@@ -994,7 +994,7 @@ a_  <span class="hljs-number">32</span> <span class="hljs-number">64</span>     
 ad  <span class="hljs-number">32</span>         x86.olly    GPL2    OllyDBG X86 disassembler
 ad  <span class="hljs-number">8</span>          z80         NC-GPL2 Zilog Z80
 </code></pre><h3 id="3-5-9-configuring-the-disassembler">3.5.9 Configuring the disassembler</h3>
-<p>There are multiple options that can be used to configure the output of the disassembly, all these options are described using <code>e? asm.</code> </p>
+<p>There are multiple options that can be used to configure the output of the disassembler, all these options are described using <code>e? asm.</code> </p>
 <pre><code>              asm.os: <span class="hljs-operator"><span class="hljs-keyword">Select</span> operating system (kernel) (linux, darwin, w32,..)
            asm.bytes: Display the bytes <span class="hljs-keyword">of</span> <span class="hljs-keyword">each</span> instruction
       asm.cmtflgrefs: <span class="hljs-keyword">Show</span> comment flags associated <span class="hljs-keyword">to</span> branch referece
@@ -1035,10 +1035,10 @@ ad  <span class="hljs-number">8</span>          z80         NC-GPL2 Zilog Z80
             asm.bits: Word <span class="hljs-keyword">size</span> <span class="hljs-keyword">in</span> bits <span class="hljs-keyword">at</span> assembler
       asm.lineswidth: <span class="hljs-keyword">Number</span> <span class="hljs-keyword">of</span> columns <span class="hljs-keyword">for</span> program flow arrows</span>
 </code></pre><h3 id="3-5-10-disassembly-syntax">3.5.10 Disassembly syntax</h3>
-<p>The syntax is the flavour of disassembly syntax prefered to be used by the disasm engine.</p>
+<p>The syntax variable is used to influence the flavor of assembly syntax the disassembler engine outputs.</p>
 <pre><code>e <span class="hljs-keyword">asm</span>.syntax = intel
 e <span class="hljs-keyword">asm</span>.syntax = att
-</code></pre><p>You can also check asm.pseudo which is an experimental pseudocode view and asm.esil, ESIL stands for &#39;Evaluable Strings Intermedate Language&#39;. It aims to describe a human readable representation for every opcode. Those representations can be evaluated in order to emulate code.</p>
+</code></pre><p>You can also check asm.pseudo which is an experimental pseudocode view and asm.esil which outputs ESIL (&#39;Evaluable Strings Intermedate Language&#39;). It aims to output a human readable representation of every opcode. Those representations can be evaluated in order to emulate the code.</p>
 
                     
                     </section>

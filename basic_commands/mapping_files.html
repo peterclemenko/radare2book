@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="3.4" data-basepath=".." data-revision="1398629676614">
+<div class="book" data-github="Maijin/radare2book" data-level="3.4" data-basepath=".." data-revision="1399826548055">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -709,12 +709,12 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_8">
+                    <section class="normal" id="section-gitbook_9">
                     
                         <h2 id="mapping-files">Mapping files</h2>
-<p>Radare IO allows to virtually map contents of files in the same IO space at random offsets. This is useful to open multiple files in a single view or just to &#39;emulate&#39; an static environment like if it was in the debugger with the program and all its libraries mapped there.</p>
-<p>Using the <code>S</code>ections command you&#39;ll be able to define different base address for each library loaded at different offsets.</p>
-<p>Mapping files is done with the <code>o</code> (open) command. Let&#39;s read the help:</p>
+<p>Radare IO allows you to virtually map contents of files into the same IO space as you loaded binary at random offsets. This is useful to open multiple files in a single view or to &#39;emulate&#39; an static environment similar to what you would have using a debugger where the program and all its libraries are loaded in memory and can be accessed.</p>
+<p>Using the <code>S</code>ections command you&#39;ll be able to define different base addresses for each library loaded.</p>
+<p>Mapping files is done using the <code>o</code> (open) command. Let&#39;s read the help:</p>
 <pre><code>[<span class="hljs-number">0x00000000</span>]&gt; o?
 Usage: o[com- ] [<span class="hljs-type">file</span>] ([<span class="hljs-command">offset</span>])
 o                  <span class="hljs-type">list</span> opened files
@@ -744,9 +744,9 @@ om[?]              create, <span class="hljs-type">list</span>, remove IO maps
 -<span class="ruby"> <span class="hljs-number">6</span> /bin/ls @ <span class="hljs-number">0x0</span> ; r
 </span>-<span class="ruby"> <span class="hljs-number">10</span> /lib/ld-linux.so.<span class="hljs-number">2</span> @ <span class="hljs-number">0x100000000</span> ; r
 </span>-<span class="ruby"> <span class="hljs-number">14</span> /bin/zsh @ <span class="hljs-number">0x499999</span> ; r</span>
-</code></pre><p>Print some hexadecimal from /bin/zsh</p>
+</code></pre><p>Print some hexadecimal values from /bin/zsh</p>
 <pre><code><span class="hljs-attr_selector">[0x00000000]</span>&gt; <span class="hljs-tag">px</span> <span class="hljs-at_rule">@ <span class="hljs-number">0</span>x499999</span>
-</code></pre><p>To unmap these files just use the <code>o-</code> command giving the file descriptor as argument:</p>
+</code></pre><p>To unmap these files simply use the <code>o-</code> command giving the file descriptor as argument:</p>
 <pre><code><span class="hljs-attr_selector">[0x00000000]</span>&gt; <span class="hljs-tag">o-14</span>
 </code></pre>
                     

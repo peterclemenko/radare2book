@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="3.1" data-basepath=".." data-revision="1398629676614">
+<div class="book" data-github="Maijin/radare2book" data-level="3.1" data-basepath=".." data-revision="1399826548055">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -709,10 +709,10 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_11">
+                    <section class="normal" id="section-gitbook_12">
                     
                         <h2 id="seeking">Seeking</h2>
-<p>The command <code>s</code> is used to seek. It accepts a math expression as argument that can be composed by shift operations, basic math ones and memory access.</p>
+<p>Seeking is done using the <code>s</code> command. It accepts a math expression as argument which can be composed of shift operations, basic math operations or memory access operations.</p>
 <pre><code>[<span class="hljs-number">0x00000000</span>]&gt; <span class="hljs-keyword">s</span>?
 Usage: <span class="hljs-keyword">s</span>[+-] [addr]
 <span class="hljs-keyword">s</span>                 <span class="hljs-keyword">print</span> current address
@@ -738,10 +738,10 @@ sr pc             <span class="hljs-keyword">seek</span> to register
 
 &gt; <span class="hljs-number">3</span><span class="hljs-keyword">s</span>++        ; <span class="hljs-number">3</span> <span class="hljs-keyword">times</span> block-seeking
 &gt; <span class="hljs-keyword">s</span> <span class="hljs-number">10</span>+<span class="hljs-number">0x80</span>   ; <span class="hljs-keyword">seek</span> at <span class="hljs-number">0x80</span>+<span class="hljs-number">10</span>
-</code></pre><p>To &#39;query&#39; the math expression you can evaluate them using the <code>?</code> command and giving the math operation as argument. And getting the result in hexa, decimal, octal and binary.</p>
+</code></pre><p>If you want to inspect the result of a math expression you can evaluate it using the <code>?</code> command. Simply pass the expression as an argument. The result can be displayed in hexadecimal, decimal, octal or binary.</p>
 <pre><code><span class="hljs-blockquote">&gt; ? 0x100+200</span>
 0x1C8 ; 456d ; 710o ; 1100 1000  
-</code></pre><p>In visual mode just press <code>u</code> or <code>U</code> to undo or redo inside the seek history.</p>
+</code></pre><p>In visual mode you can press <code>u</code> (undo) or <code>U</code> (redo) inside the seek history.</p>
 
                     
                     </section>

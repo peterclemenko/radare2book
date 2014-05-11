@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="3.3" data-basepath=".." data-revision="1398629676614">
+<div class="book" data-github="Maijin/radare2book" data-level="3.3" data-basepath=".." data-revision="1399826548055">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -709,11 +709,11 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_10">
+                    <section class="normal" id="section-gitbook_11">
                     
                         <h2 id="sections">Sections</h2>
-<p>It is usually on firmware images, bootloaders and binary files to find sections that are loaded in memory at different addresses than the one in the disk.</p>
-<p>To solve this issue, radare implements <code>S</code>.</p>
+<p>Firmware images, bootloaders and binary files usually load various sections of a binary to different addresses in memory.</p>
+<p>To represent this behavior, radare offers the <code>S</code> command.</p>
 <p>Here&#39;s the help message:</p>
 <pre><code>[<span class="hljs-number">0xB7EE8810</span>]&gt; S?
 Usage: S[?-.*=adlr] [...]
@@ -728,11 +728,11 @@ Sl [<span class="hljs-type">file</span>]       ; load <span class="hljs-property
 Sr [<span class="hljs-property">name</span>]       ; rename section <span class="hljs-function_start"><span class="hljs-keyword">on</span></span> current seek
 S [off] [vaddr] [sz] [vsz] [<span class="hljs-property">name</span>] [rwx] ; add new section
 S-[<span class="hljs-property">id</span>|<span class="hljs-number">0</span>xoff|*]  ; remove this section definition
-</code></pre><p>We can specify a section in a single line in this way:</p>
+</code></pre><p>You can specify a section in a single line in this way:</p>
 <pre><code><span class="hljs-tag">S</span> <span class="hljs-attr_selector">[off]</span> <span class="hljs-attr_selector">[vaddr]</span> <span class="hljs-attr_selector">[sz]</span> <span class="hljs-attr_selector">[vsz]</span> <span class="hljs-attr_selector">[name]</span> <span class="hljs-attr_selector">[rwx]</span> ; <span class="hljs-tag">add</span> <span class="hljs-tag">new</span> <span class="hljs-tag">section</span>
 </code></pre><p>For example:</p>
 <pre><code><span class="hljs-attr_selector">[0x00404888]</span>&gt; <span class="hljs-tag">S</span> 0<span class="hljs-tag">x00000100</span> 0<span class="hljs-tag">x00400000</span> 0<span class="hljs-tag">x0001ae08</span> 0001<span class="hljs-tag">ae08</span> <span class="hljs-tag">test</span> <span class="hljs-tag">rwx</span>
-</code></pre><p>Displaying the sections information:</p>
+</code></pre><p>Displaying the section information:</p>
 <pre><code>[<span class="hljs-number">0x00404888</span>]&gt; S ; list sections
 
 [<span class="hljs-number">00</span>] . <span class="hljs-number">0x00000238</span> r-- va=<span class="hljs-number">0x00400238</span> sz=<span class="hljs-number">0x0000001c</span> vsz=0000001c .interp
@@ -749,8 +749,8 @@ S-[<span class="hljs-property">id</span>|<span class="hljs-number">0</span>xoff|
 <span class="hljs-number">26</span>  <span class="hljs-number">0x0001a608</span> |-----------------------------<span class="hljs-comment">#| 0x0001a706 --- .shstrtab</span>
 <span class="hljs-number">27</span>* <span class="hljs-number">0x00000000</span> |<span class="hljs-comment">##############################| 0x0001ae08 rwx ehdr</span>
 =&gt;  <span class="hljs-number">0x00004888</span> |-----^------------------------| <span class="hljs-number">0x00004988</span>
-</code></pre><p>The first three lines are sections and the last one <code>=&gt;</code> is the current seek representation based on the proportions over them.</p>
-<p>To remove a section definition just prefix the name of the section with <code>-</code>:</p>
+</code></pre><p>The first three lines are sections and the last one (prefixed by <code>=&gt;</code>) is the current seek location.</p>
+<p>To remove a section definition simply prefix the name of the section with <code>-</code>:</p>
 <pre><code><span class="hljs-attr_selector">[0xB7EE8810]</span>&gt; <span class="hljs-tag">S</span> <span class="hljs-tag">-</span><span class="hljs-class">.dynsym</span>
 </code></pre>
                     

@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="3.7" data-basepath=".." data-revision="1398629676614">
+<div class="book" data-github="Maijin/radare2book" data-level="3.7" data-basepath=".." data-revision="1399826548055">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -709,14 +709,14 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_12">
+                    <section class="normal" id="section-gitbook_13">
                     
                         <h2 id="write">Write</h2>
-<p>Radare can manipulate the file in multiple ways. You can resize the file, move bytes, copy/paste them, insert mode (shifting data to the end of the block or file) or just overwrite some bytes with an address, the contents of a file, a widestring or inline assembling an opcode.</p>
-<p>To resize. Use the <code>r</code> command which accepts a numeric argument. Possitive valule sets the new size to the file. A negative one will strip N bytes from the current seek down-sizing the file.</p>
+<p>Radare can manipulate a loaded binary file in multiple ways. You can resize the file, move and copy/paste bytes, insert new bytes (shifting data to the end of the block or file) or simply overwrite bytes at a address, contents of a file, a widestring or even inline assembling an opcode.</p>
+<p>To resize use the <code>r</code> command which accepts a numeric argument. A positive value sets the new size to the file. A negative one will strip N bytes from the current seek, down-sizing the file.</p>
 <pre><code>r <span class="hljs-number">1024</span>      ; resize <span class="hljs-operator">the</span> <span class="hljs-built_in">file</span> <span class="hljs-built_in">to</span> <span class="hljs-number">1024</span> <span class="hljs-keyword">bytes</span>
 r -<span class="hljs-number">10</span> @ <span class="hljs-number">33</span>  ; strip <span class="hljs-number">10</span> <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">at</span> <span class="hljs-built_in">offset</span> <span class="hljs-number">33</span>
-</code></pre><p>To write bytes just use the <code>w</code> command. It accepts multiple input formats like inline assembling, endian-friendly dwords, files, hexpair files, wide strings:</p>
+</code></pre><p>To write bytes use the <code>w</code> command. It accepts multiple input formats like inline assembly, endian-friendly dwords, files, hexpair files, wide strings:</p>
 <pre><code>[<span class="hljs-number">0</span>x00404888]&gt; w?
 |Usage: w[x] [str] [&lt;<span class="hljs-keyword">file</span>] [&lt;&lt;EOF] [@addr]
 | w foobar     <span class="hljs-keyword">write</span> <span class="hljs-keyword">string</span> <span class="hljs-string">'foobar'</span>
@@ -742,7 +742,7 @@ r -<span class="hljs-number">10</span> @ <span class="hljs-number">33</span>  ; 
  [<span class="hljs-number">0x00000000</span>]&gt; wv <span class="hljs-number">0x8048123</span> <span class="hljs-decorator">@ 0x8049100</span>
  [<span class="hljs-number">0x00000000</span>]&gt; wa jmp <span class="hljs-number">0x8048320</span>
 </code></pre><h3 id="3-8-1-write-over-with-operation">3.8.1 Write over with operation</h3>
-<p>The <code>wo</code> write command accepts multiple kinds of operations that can be applied on the curren block. This is for example a XOR, ADD, SUB, ...</p>
+<p>The <code>wo</code> command (write operation) accepts multiple kinds of operations that can be applied on the curren block. This is for example a XOR, ADD, SUB, ...</p>
 <pre><code>[<span class="hljs-number">0</span>x4A13B8C0]&gt; wo?
 <span class="hljs-string">|Usage: wo[asmdxoArl24] [hexpairs] @ addr[:bsize]</span>
 <span class="hljs-string">|Example:</span>
@@ -765,8 +765,8 @@ r -<span class="hljs-number">10</span> @ <span class="hljs-number">33</span>  ; 
 <span class="hljs-string">|  wol  &lt;&lt;= shift left</span>
 <span class="hljs-string">|  wo2  2=  2 byte endian swap</span>
 <span class="hljs-string">|  wo4  4=  4 byte endian swap</span>
-</code></pre><p>This way it is possible to implement ciphering algorithms using radare core primitives.</p>
-<p>A sample session doing a xor(90) + addition(01 02)</p>
+</code></pre><p>This way it is possible to implement cipher-algorithms using radare core primitives.</p>
+<p>A sample session doing a xor(90) + addition(01 02):</p>
 <pre><code>[0x7fcd6a891630]&gt; px
 -<span class="ruby"> offset -       <span class="hljs-number">0</span> <span class="hljs-number">1</span>  <span class="hljs-number">2</span> <span class="hljs-number">3</span>  <span class="hljs-number">4</span> <span class="hljs-number">5</span>  <span class="hljs-number">6</span> <span class="hljs-number">7</span>  <span class="hljs-number">8</span> <span class="hljs-number">9</span>  <span class="hljs-constant">A</span> <span class="hljs-constant">B</span>  <span class="hljs-constant">C</span> <span class="hljs-constant">D</span>  <span class="hljs-constant">E</span> <span class="hljs-constant">F</span>  <span class="hljs-number">01234567</span>89ABCDEF
 </span>0x7fcd6a891630  4889 e7e8 6839 0000 4989 c48b 05ef 1622  H...h9..I......"

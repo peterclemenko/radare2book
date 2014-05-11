@@ -40,7 +40,7 @@
     </head>
     <body>
         
-<div class="book" data-github="Maijin/radare2book" data-level="3" data-basepath=".." data-revision="1398629676614">
+<div class="book" data-github="Maijin/radare2book" data-level="3" data-basepath=".." data-revision="1399826548055">
     <div class="book-header">
     <!-- Actions Left -->
     <a href="https://github.com/Maijin/radare2book" target="_blank" class="btn pull-left"><i class="fa fa-github-alt"></i></a>
@@ -709,36 +709,36 @@
 
                 <div class="page-inner">
                 
-                    <section class="normal" id="section-gitbook_7">
+                    <section class="normal" id="section-gitbook_8">
                     
                         <h1 id="basic-commands">Basic commands</h1>
-<p>The basic set of commands in radare can be mostly grouped by action, and they should be easy to remember and short. This is why they are grouped with a single character, subcommands or related commands are described with a second character. For example <code>/ foo</code> for searching plain strings or <code>/x 90 90</code> to look for hexpair strings.</p>
-<p>The format of the commands (as explained in &#39;Command format&#39; chapter) looks something like that:</p>
+<p>Most command names in radare are derived from action names. They should be easy to remember as well as short. Therefore command names are all single letters. Subcommands or related commands are described using a second character. For example <code>/ foo</code> for searching plain strings or <code>/x 90 90</code> to look for hexpair strings.</p>
+<p>The format of valid command (as explained in &#39;Command format&#39; chapter) looks something like this:</p>
 <pre><code>[[.][times][cmd][~grep][@[@iter]addr!size][|&gt;pipe] ; ...
 
 &gt; <span class="hljs-number">3</span>s +<span class="hljs-number">1024</span>    ; seeks three times <span class="hljs-number">1024</span> from the current seek
-</code></pre><p>If the command starts with <code>!</code> the string is passed to the plugin hadling the current IO (the debugger for example), if no one handles it calls to posix_system() which is a shell escape, you can prefix the command with two <code>!!</code>.</p>
+</code></pre><p>If the command starts with <code>!</code> the string is passed to the currently loaded IO plugin (the debugger for example). If no plugin handles the command, posix_system() is called to hand the command to your shell. You can also force this by prefixing your command with two exlamation marks <code>!!</code> to make sure your command is directly handed to the shell.</p>
 <pre><code>&gt; !help       ; handled <span class="hljs-keyword">by</span> <span class="hljs-operator">the</span> debugger <span class="hljs-operator">or</span> <span class="hljs-built_in">shell</span>
 &gt; !!ls        ; runs ls <span class="hljs-operator">in</span> <span class="hljs-operator">the</span> <span class="hljs-built_in">shell</span>
-</code></pre><p>The [arg] argument depends on the command, but most of them take a number as argument to specify the number of bytes to work on instead of block size. Other commands accept math expressions, or strings.</p>
+</code></pre><p>The [arg]-part depends on the specific command. As a rule of thumb, most commands take a number as an argument to specify the number of bytes to work on instead of block size. Other commands accept math expressions, or strings.</p>
 <pre><code>&gt; px <span class="hljs-number">0x17</span>     ; show <span class="hljs-number">0x17</span> <span class="hljs-keyword">bytes</span> <span class="hljs-operator">in</span> hexa <span class="hljs-keyword">at</span> current <span class="hljs-built_in">seek</span>
 &gt; s base+<span class="hljs-number">0x33</span> ; seeks <span class="hljs-built_in">to</span> flag <span class="hljs-string">'base'</span> plus <span class="hljs-number">0x33</span>
 &gt; / lib       ; search <span class="hljs-keyword">for</span> <span class="hljs-string">'lib'</span> <span class="hljs-keyword">string</span>.
-</code></pre><p>The <code>@</code> is used to specify a temporal seek where the command is executed. This is quite useful to not seeking all the time.</p>
+</code></pre><p>The <code>@</code> command is used to specify a temporal offset location / seek at which the command is executed. This is quite useful so you don&#39;t have to seek around all the time.</p>
 <pre><code>&gt; p8 <span class="hljs-number">10</span> @ <span class="hljs-number">0x4010</span>  ; show <span class="hljs-number">10</span> <span class="hljs-keyword">bytes</span> <span class="hljs-keyword">at</span> <span class="hljs-built_in">offset</span> <span class="hljs-number">0x4010</span>
 &gt; f patata @ <span class="hljs-number">0x10</span> ; <span class="hljs-built_in">set</span> <span class="hljs-string">'patata'</span> flag <span class="hljs-keyword">at</span> <span class="hljs-built_in">offset</span> <span class="hljs-number">0x10</span>
-</code></pre><p>Using <code>@@</code> you can execute a single command on a list of flags matching the glob:</p>
+</code></pre><p>Using the <code>@@</code> command you can execute a single command on a list of flags matching the glob. You can think of it as a foreach operation:</p>
 <pre><code>&gt; s <span class="hljs-number">0</span>
 &gt; / lib             ; search <span class="hljs-string">'lib'</span> <span class="hljs-keyword">string</span>
 &gt; p8 <span class="hljs-number">20</span> @@ hit0_*   ; show <span class="hljs-number">20</span> hexpairs <span class="hljs-keyword">at</span> <span class="hljs-keyword">each</span> search hit
-</code></pre><p>The <code>&gt;</code> is used to pipe the output of the command to a file (truncating to 0 if exist)</p>
+</code></pre><p>The <code>&gt;</code> operation is used to redirect the output of a command into a file (truncating it to 0 if it already exist)</p>
 <pre><code>&gt; pr &gt; dump.bin   ; dump <span class="hljs-string">'raw'</span> <span class="hljs-keyword">bytes</span> <span class="hljs-operator">of</span> current block <span class="hljs-built_in">to</span> <span class="hljs-string">'dump.bin'</span> <span class="hljs-built_in">file</span>
 &gt; f  &gt; flags.txt  ; dump flag list <span class="hljs-built_in">to</span> <span class="hljs-string">'flags.txt'</span>
-</code></pre><p>The <code>|</code> pipe is used to dump the output of the command to another program.</p>
+</code></pre><p>The <code>|</code> operation (pipe) behaves similar to what you&#39;re used from the *NIX shell: use the output of one command as the input to another.</p>
 <pre><code>[<span class="hljs-number">0x4A13B8C0</span>]&gt; f | <span class="hljs-keyword">grep</span> section | <span class="hljs-keyword">grep</span> text
 <span class="hljs-number">0x0805f3b0</span> <span class="hljs-number">512</span> section._text
 <span class="hljs-number">0x080d24b0</span> <span class="hljs-number">512</span> section._text_end
-</code></pre><p>Using the <code>;</code> chars you can concatenate multiple commands in a single line:</p>
+</code></pre><p>Using the <code>;</code> char you can concatenate multiple commands on a single line:</p>
 <pre><code><span class="hljs-blockquote">&gt; px ; dr</span>
 </code></pre>
                     
